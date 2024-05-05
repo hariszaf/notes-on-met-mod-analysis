@@ -4,6 +4,5 @@
 :class: dark-light
 ```
 
-**A book about differential privacy, for programmers**
-
-**By Joseph P. Near and Chiké Abuah**
+Cover figure based on: 
+Vivek-Ananth, R. P., and Areejit Samal.  Biosystems 147 (2016): 1-10.
