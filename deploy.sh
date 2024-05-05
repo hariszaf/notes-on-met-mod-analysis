@@ -7,7 +7,6 @@ jupyter-book build --builder pdflatex notebooks
 echo "# cp en assets"
 cp static/index.html _build/html/
 cp static/book-logo.png _build/html/
-# cp static/CNAME _build/html/
 cp _build/latex/book.pdf _build/html/ 2>/dev/null || :
 
 # deploy book

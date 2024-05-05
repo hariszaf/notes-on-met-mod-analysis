@@ -4,33 +4,16 @@ This repo hosts the Jupyter book of mine for the analysis of (community) metabol
 
 ## Build a Jupyter book
 
+### Overview
+
+> For Enterprise version:
 > GitHub Pages now gives you the option to limit access, making the [site visible only to users with access to the repository that published the Page](https://github.blog/changelog/2021-01-21-access-control-for-github-pages/). 
 > With access control, you can use GitHub Pages to publish and share internal documentation and knowledge across your enterprise.
+> For the free plan, it seems you need to have your repo public. 
+
 
 
 Examples of [Jbooks](https://executablebooks.org/en/latest/gallery/).
-
-As mentioned in the `requirements.txt` file, we need to make sure `jupyter-book` is available locally.
-If not, to get it:
-
-```bash
-pip install -U jupyter-book
-```
-
-Then, for our book, we need the `sphinx` libraries:
-
-```bash
-pip install sphinx 
-pip install sphinx-proof
-pip install pydata-sphinx-theme
-```
-
-Also, the `ghp-import` library will be needed. 
-
-```bash
-pip install ghp-import
-```
-
 
 Building a Jupyter Book broadly consists of these steps:
 
@@ -80,8 +63,61 @@ jupyter-book build .
 
 - Publish your book online. Once your book is built, you can share it with others. Most common is to build HTML, and host it as a public website. See [Publish your book online](https://jupyterbook.org/en/stable/start/publish.html).
 
+> **Never** edit the `gh-pages` directly! 
 
 
+### Build **this** JBook
+
+As mentioned in the `requirements.txt` file, we need to make sure `jupyter-book` is available locally.
+If not, to get it:
+
+```bash
+pip install -U jupyter-book
+```
+
+Then, for our book, we need the `sphinx` libraries:
+
+```bash
+pip install sphinx 
+pip install sphinx-proof
+pip install pydata-sphinx-theme
+```
+
+Also, the `ghp-import` library will be needed. 
+
+```bash
+pip install ghp-import
+```
 
 
+Then, once your notebooks are ready to go, just execute the `deplosy.sh` script. 
 
+```bash
+bash deploy.sh
+```
+
+### References
+
+
+To add a reference, you need to first add the `.bit` item to the `references.bib` file within the `notebooks` folder and to mention it in a notebook 
+you need to follow the following syntax. 
+Assuming your `.bib` item is 
+
+```bib
+@article{dwork2014,
+  title={The algorithmic foundations of differential privacy},
+  author={Dwork, Cynthia and Roth, Aaron and others},
+  journal={Foundations and Trends{\textregistered} in Theoretical Computer Science},
+  volume={9},
+  number={3--4},
+  pages={211--407},
+  year={2014},
+  publisher={Now Publishers, Inc.}
+}
+```
+
+You would need to have on your notebook:
+
+```python
+{cite}`dwork2014`
+```
