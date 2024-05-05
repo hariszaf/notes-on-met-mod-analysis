@@ -1,0 +1,8 @@
+format: jb-book
+root: cover
+chapters:
+- file: intro
+- file: ch1
+- file: ch2
+- file: ch3
+- file: bibliography

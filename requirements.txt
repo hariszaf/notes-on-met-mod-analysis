@@ -1,0 +1,7 @@
+jupyter-book==0.15.1
+matplotlib
+numpy
+pandas
+pydata-sphinx-theme>=0.13.3
+sphinx==5.0.2
+sphinx-proof
