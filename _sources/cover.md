@@ -4,5 +4,4 @@
 :class: dark-light
 ```
 
-Cover figure based on: 
-Vivek-Ananth, R. P., and Areejit Samal.  Biosystems 147 (2016): 1-10.
+![Static Badge](https://img.shields.io/badge/status-in%20preparation-brightgreen?style=for-the-badge)
