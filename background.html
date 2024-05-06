@@ -469,14 +469,14 @@ used to generate energy <strong>or</strong> biomass; if one function increases, 
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{align}
+% \begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
     v^+  \\
     v^-
 \end{bmatrix} \qquad
-\end{align}
+% \end{align}
 \end{split}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
 <div class="math notranslate nohighlight">
@@ -499,6 +499,15 @@ N  &amp;  {-N} \\
 I   &amp;   0  \\
 0   &amp;   I 
 \end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+a_{11}&amp; =b_{11}&amp;
+  a_{12}&amp; =b_{12}\\
+a_{21}&amp; =b_{21}&amp;
+  a_{22}&amp; =b_{22}+c_{22}
+\end{align}
 \end{split}\]</div>
 <p>The set of constraints on (<span class="math notranslate nohighlight">\(v^+\)</span> , <span class="math notranslate nohighlight">\(v^−\)</span> ) define a <strong>polyhedral cone</strong> and since they are non-negative, the cone is also pointed, meaning it contains no complete line and the zero vector is the only vertex
 (extreme point) of the cone.</p>
