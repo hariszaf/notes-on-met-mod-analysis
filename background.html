@@ -431,28 +431,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
 <h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%javascript</span>
-<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">TeX</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">equationNumbers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">autoNumber</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AMS&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/javascript">MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script></div>
-</div>
 <div class="proof definition admonition" id="Balanced growth">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (Balanced growth)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
 i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 </section>
-</div><div class="proof definition admonition" id="$$k_{cat}$$">
+</div><div class="proof definition admonition" id="k_cat">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span> (<span class="math notranslate nohighlight">\(k_{cat}\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
@@ -483,29 +468,20 @@ used to generate energy <strong>or</strong> biomass; if one function increases, 
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{equation}
-% \label{eq1}
-N \times  v = 0 = N \times v^+  - N \times v^- = 
+\[\begin{split}N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
     v^+  \\
     v^-
-\end{bmatrix} \qquad
-\end{equation}
-\end{split}\]</div>
+\end{bmatrix} \qquad\end{split}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{equation} 
-A
+\[\begin{split}A
 \begin{bmatrix}
     v^+  \\
     v^-
 \end{bmatrix}
-\geq 0
-\end{equation}
-\end{split}\]</div>
+\geq 0\end{split}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
