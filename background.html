@@ -431,6 +431,21 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
 <h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%javascript</span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">TeX</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">equationNumbers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">autoNumber</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AMS&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script></div>
+</div>
 <div class="proof definition admonition" id="Balanced growth">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (Balanced growth)</p>
 <section class="definition-content" id="proof-content">
@@ -438,7 +453,7 @@ document.write(`
 i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 </section>
 </div><div class="proof definition admonition" id="$$k_{cat}$$">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span> ($<span class="math notranslate nohighlight">\(k_{cat}\)</span>$)</p>
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (<span class="math notranslate nohighlight">\(k_{cat}\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
 It indicates the number of substrate molecules converted into product per enzyme molecule per unit time under optimal conditions.
@@ -455,7 +470,7 @@ the rate at which material flows into the cell matches the rate at which it is c
 In addition, we assume that these fluxes are constant, such that the whole metabolic network is in a ‘steady-state’.
 Taken together, we thus assume that the metabolic network can take up and produce external metabolites (e.g. extracellular metabolites and macromolecular precursors),
 but that all internal metabolites (“inside” the metabolic network) are mass-balanced, that is, for each of these metabolites, production and consumption cancel out.</p>
-<p>Since each enzyme has a maximal catalytic rate (the $<span class="math notranslate nohighlight">\(k_{cat}\)</span>$ value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
+<p>Since each enzyme has a maximal catalytic rate (the <span class="math notranslate nohighlight">\(k_{cat}\)</span> value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
 since cellular space is limited, fluxes cannot increase infinitely since there is always an upper bound on a weighted sum of reaction fluxes.
 This constraint implies compromises between different reaction fluxes: one flux can only be increased at the expense of others.</p>
 <p>The mathematical model:</p>
@@ -468,16 +483,43 @@ used to generate energy <strong>or</strong> biomass; if one function increases, 
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
 <div class="math notranslate nohighlight">
-\[
-N \times  v = 0 = N \times v^+  - N \times v^- = \left[ N -N \right] 
-\]</div>
-<div class="math notranslate nohighlight">
 \[\begin{split}
+\begin{equation}
+\label{eq1}
+N \times  v = 0 = N \times v^+  - N \times v^- = 
+\left[ N \ {-N} \right] 
 \begin{bmatrix}
     v^+  \\
-    V^-
+    v^-
 \end{bmatrix} \qquad
+\end{equation}
 \end{split}\]</div>
+<p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation} 
+A
+\begin{bmatrix}
+    v^+  \\
+    v^-
+\end{bmatrix}
+\geq 0
+\end{equation}
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}
+N  &amp;  {-N} \\
+{-N} &amp;  N \\
+I   &amp;   0  \\
+0   &amp;   I 
+\end{bmatrix}
+\end{split}\]</div>
+<p>The set of constraints on (<span class="math notranslate nohighlight">\(v^+\)</span> , <span class="math notranslate nohighlight">\(v^−\)</span> ) define a <strong>polyhedral cone</strong> and since they are non-negative, the cone is also pointed, meaning it contains no complete line and the zero vector is the only vertex
+(extreme point) of the cone.</p>
+<p>\begin{aligned} \sin 2\theta = 2\sin \theta \cos \theta \ = \cfrac{2 \tan \theta}{1+\tan^2 \theta} \end{aligned} \label{1-1}\tag{1-1}</p>
+<p>The space of solutions that satisfies  is called the <strong>flux cone</strong>.</p>
 </section>
 
     <script type="text/x-thebe-config">
