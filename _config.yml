@@ -1,5 +1,5 @@
 # Book settings
-title: Trying to set up a private Jbook
+title: Trying to set up a Jbook
 author: Haris Zafeiropoulos
 copyright: "2024"
 # The logo gets the notebooks/ as root
@@ -20,7 +20,7 @@ sphinx:
       - dollarmath
 
 html:
-  favicon                   : favicon.png  # also, under /notebooks
+  favicon                   : favicon.png
   use_edit_page_button      : true
   use_repository_button     : true
   use_issues_button         : true
