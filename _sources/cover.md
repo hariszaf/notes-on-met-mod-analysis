@@ -1,4 +1,4 @@
-# Programming Differential Privacy
+# Notes on metabolic modelling analysis
 
 ```{image} logo.png
 :class: dark-light
