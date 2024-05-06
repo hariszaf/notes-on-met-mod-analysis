@@ -58,8 +58,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'background';</script>
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -429,16 +428,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
+  <section id="metabolic-models">
 <h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
 <div class="proof definition admonition" id="Balanced growth">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (Balanced growth)</p>
 <section class="definition-content" id="proof-content">
-<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
+<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $$ \mu ≥ 0 $$,
 i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 </section>
 </div><div class="proof definition admonition" id="k_cat">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span> (<span class="math notranslate nohighlight">\(k_{cat}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> ($k_{cat}$)</p>
 <section class="definition-content" id="proof-content">
 <p>It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
 It indicates the number of substrate molecules converted into product per enzyme molecule per unit time under optimal conditions.
@@ -455,7 +454,7 @@ the rate at which material flows into the cell matches the rate at which it is c
 In addition, we assume that these fluxes are constant, such that the whole metabolic network is in a ‘steady-state’.
 Taken together, we thus assume that the metabolic network can take up and produce external metabolites (e.g. extracellular metabolites and macromolecular precursors),
 but that all internal metabolites (“inside” the metabolic network) are mass-balanced, that is, for each of these metabolites, production and consumption cancel out.</p>
-<p>Since each enzyme has a maximal catalytic rate (the <span class="math notranslate nohighlight">\(k_{cat}\)</span> value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
+<p>Since each enzyme has a maximal catalytic rate (the $k_{cat}$ value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
 since cellular space is limited, fluxes cannot increase infinitely since there is always an upper bound on a weighted sum of reaction fluxes.
 This constraint implies compromises between different reaction fluxes: one flux can only be increased at the expense of others.</p>
 <p>The mathematical model:</p>
@@ -467,49 +466,46 @@ This constraint implies compromises between different reaction fluxes: one flux 
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-% \begin{align}
-N \times  v = 0 = N \times v^+  - N \times v^- = 
-\left[ N \ {-N} \right] 
-\begin{bmatrix}
+<p>$$</p>
+<p>N \times  v = 0 = N \times v^+  - N \times v^- =
+\left[ N \ {-N} \right]</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b63f8f43-c14f-40c0-ad33-227feb04e0cb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-b63f8f43-c14f-40c0-ad33-227feb04e0cb" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
     v^+  \\
     v^-
-\end{bmatrix} \qquad
-% \end{align}
-\end{split}\]</div>
-<p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
+\end{bmatrix}\]</div>
+<p>$$</p>
+<p>The mass-balance constraints in the previous equation, combined with the property that $v_i^+$ , $v_i^- ≥ 0$ can be expressed in the form</p>
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-362526da-1309-408e-abd2-47a492198fe1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-362526da-1309-408e-abd2-47a492198fe1" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
     v^-
 \end{bmatrix}
 \geq 0
-\end{align}
-\end{split}\]</div>
+\end{align}\]</div>
+<p>$$</p>
 <p>where</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 A = \begin{bmatrix}
-N  &amp;  {-N} \\
-{-N} &amp;  N \\
-I   &amp;   0  \\
-0   &amp;   I 
+N  &amp;  {-N} \
+{-N} &amp;  N \
+I   &amp;   0  \
+0   &amp;   I
 \end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
+$$</p>
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-39aa63d9-33b6-4fcf-a3e7-edacbbab0dfb">
+<span class="eqno">(3)<a class="headerlink" href="#equation-39aa63d9-33b6-4fcf-a3e7-edacbbab0dfb" title="Permalink to this equation">#</a></span>\[\begin{align}
 a_{11}&amp; =b_{11}&amp;
   a_{12}&amp; =b_{12}\\
 a_{21}&amp; =b_{21}&amp;
   a_{22}&amp; =b_{22}+c_{22}
-\end{align}
-\end{split}\]</div>
-<p>The set of constraints on (<span class="math notranslate nohighlight">\(v^+\)</span> , <span class="math notranslate nohighlight">\(v^−\)</span> ) define a <strong>polyhedral cone</strong> and since they are non-negative, the cone is also pointed, meaning it contains no complete line and the zero vector is the only vertex
+\end{align}\]</div>
+<p>$$</p>
+<p>The set of constraints on ($v^+$ , $v^−$ ) define a <strong>polyhedral cone</strong> and since they are non-negative, the cone is also pointed, meaning it contains no complete line and the zero vector is the only vertex
 (extreme point) of the cone.</p>
 <p>The space of solutions that satisfies  is called the <strong>flux cone</strong>.</p>
 </section>
