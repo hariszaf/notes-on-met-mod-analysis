@@ -121,3 +121,21 @@ You would need to have on your notebook:
 ```python
 {cite}`dwork2014`
 ```
+
+### Equations
+
+You may have a markdown cell directly with a latex block like:
+
+```
+\begin{align}
+N \times  v = 0 = N \times v^+  - N \times v^- = 
+\left[ N \ {-N} \right] 
+\begin{bmatrix}
+    v^+  \\
+    v^-
+\end{bmatrix} \qquad
+\end{align}
+```
+
+that will be numbered. 
+

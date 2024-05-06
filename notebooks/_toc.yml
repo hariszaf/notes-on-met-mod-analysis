@@ -2,7 +2,7 @@ format: jb-book
 root: cover
 chapters:
 - file: intro
-- file: Reconstruction
+- file: background
 - file: Biased vs unbiased methods
 - file: Flux Balance Analysis
 - file: Flux Variability Analysis
