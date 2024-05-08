@@ -477,8 +477,8 @@ This constraint implies compromises between different reaction fluxes: one flux 
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01bc294d-b5e4-4360-a37c-d8bd3c66eff6">
-<span class="eqno">(1)<a class="headerlink" href="#equation-01bc294d-b5e4-4360-a37c-d8bd3c66eff6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-08ef54f2-9e4b-4a0f-8e73-834efabe82a8">
+<span class="eqno">(1)<a class="headerlink" href="#equation-08ef54f2-9e4b-4a0f-8e73-834efabe82a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -487,8 +487,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-439753c0-d1e7-439f-9b66-35d02e482c12">
-<span class="eqno">(2)<a class="headerlink" href="#equation-439753c0-d1e7-439f-9b66-35d02e482c12" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d7f2570f-1806-44f8-8093-9d4e2a3d24c5">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d7f2570f-1806-44f8-8093-9d4e2a3d24c5" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -512,18 +512,15 @@ I   &amp;   0  \\
 <section id="kinetic-models">
 <h2>Kinetic models<a class="headerlink" href="#kinetic-models" title="Link to this heading">#</a></h2>
 <p>Kinetic models are typically formulated as a set of deterministic <strong>ordinary differential equations (ODEs)</strong>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{prf:definition} kinetic variable
-:label: kinetic variable
-
-
-kinetic parameters
-$k_{cat}$
-$\frac {k_{cat}}{ K_M}$
-$K_M$
-
-</pre></div>
-</div>
-<p>Assumptions used in the formulation of biological network models</p>
+<div class="proof definition admonition" id="kinetic variable">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (kinetic variable)</p>
+<section class="definition-content" id="proof-content">
+<p>kinetic parameters
+<span class="math notranslate nohighlight">\(k_{cat}\)</span>
+<span class="math notranslate nohighlight">\(\frac {k_{cat}}{ K_M}\)</span>
+<span class="math notranslate nohighlight">\(K_M\)</span></p>
+</section>
+</div><p>Assumptions used in the formulation of biological network models</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Assumption</p></th>
@@ -549,43 +546,39 @@ $K_M$
 </tbody>
 </table>
 <p>The **stoichiometric matrix **(<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id1">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">2</a>]</span></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{prf:definition} gradient matrix 
-:label: gradient matrix 
-
-(from {cite}`palsson2006systems`)
+<div class="proof definition admonition" id="gradient matrix">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (gradient matrix)</p>
+<section class="definition-content" id="proof-content">
+<p>(from <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">2</a>]</span>)
 Each link in a reaction map has kinetic properties with which it is associated.
-The reaction rates that describe the kinetic properties are found in the rate laws, $v(x; k)$, where the vector $k$ contains
+The reaction rates that describe the kinetic properties are found in the rate laws, <span class="math notranslate nohighlight">\(v(x; k)\)</span>, where the vector <span class="math notranslate nohighlight">\(k\)</span> contains
 all the kinetic constants that appear in the rate laws. Ultimately, these
 properties represent time constants that tell us how quickly a link in a
 network will respond to the concentrations that are involved in that link.
 The reciprocal of these time constants is found in the gradient matrix G,
-whose elements are
-
-$$
+whose elements are</p>
+<div class="math notranslate nohighlight">
+\[
 g_{ij} =\frac{\partial v_i}{\partial x_j}
-$$
-
-These constants may change from one member to the next in a biopop-
+\]</div>
+<p>These constants may change from one member to the next in a biopop-
 ulation, given the natural sequence diversity that exists. Therefore, the
-gradient matrix is a *genetically determined* matrix. Two members of the
-population may have a different $G$ matrix. 
-</pre></div>
-</div>
-<p>Mathematically speaking, <span class="math notranslate nohighlight">\(G\)</span> has several challenging features.
+gradient matrix is a <em>genetically determined</em> matrix. Two members of the
+population may have a different <span class="math notranslate nohighlight">\(G\)</span> matrix.</p>
+</section>
+</div><p>Mathematically speaking, <span class="math notranslate nohighlight">\(G\)</span> has several challenging features.
 Unlike the stoichiometric matrix, its numerical values vary over many orders of magnitude.
 Some links have very fast response times, while others have long response times.
 The entries of <span class="math notranslate nohighlight">\(G\)</span> are real numbers and, therefore, are not “knowable.”
 The values of <span class="math notranslate nohighlight">\(G\)</span> will always come with an error bar associated with the experimental method used to determine them.
 It has though, the same sparsity properties as the matrix <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{prf:definition} Jacobian matrix
-:label: jacobian matrix
-
-$S$ gives us network structure and $G$ gives us kinetic parameters of the links in the network.
-Their product, the **Jacobian matrix** ($J$)  gives us the network dynamics.
-
-</pre></div>
-</div>
+<div class="proof definition admonition" id="jacobian matrix">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Jacobian matrix)</p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(S\)</span> gives us network structure and <span class="math notranslate nohighlight">\(G\)</span> gives us kinetic parameters of the links in the network.
+Their product, the <strong>Jacobian matrix</strong> (<span class="math notranslate nohighlight">\(J\)</span>)  gives us the network dynamics.</p>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
