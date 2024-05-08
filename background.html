@@ -441,24 +441,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
 <h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
-<div class="proof definition admonition" id="Balanced growth">
-<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Balanced growth)</p>
+<div class="proof definition admonition" id="flux">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (flux)</p>
 <section class="definition-content" id="proof-content">
-<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
-i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
-</section>
-</div><div class="proof definition admonition" id="k_cat">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span> (<span class="math notranslate nohighlight">\(k_{cat}\)</span>)</p>
-<section class="definition-content" id="proof-content">
-<p>It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
-It indicates the number of substrate molecules converted into product per enzyme molecule per unit time under optimal conditions.
-In simpler terms, it reflects how fast an enzyme can convert substrate into product.</p>
-</section>
-</div><div class="proof definition admonition" id="reaction flux">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span> (reaction flux)</p>
-<section class="definition-content" id="proof-content">
-<p>Reaction flux refers to the <strong>rate</strong> at which a biochemical reaction proceeds in a biological system.
+<p>(from <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Gregory Stephanopoulos. Metabolic fluxes and metabolic engineering. Metabolic engineering, 1(1):1–11, 1999.">2</a>]</span>)
+The metabolic flux can be defined as the rate at which material is processed through a metabolic pathway.
+A reaction’s flux refers to the <strong>rate</strong> at which the biochemical reaction proceeds in a biological system.
 It’s a measure of <em>how quickly</em> reactants are being converted into products within a specific cellular context.</p>
+<p>For insightful visualization that may help you with the concept of a flux, you may have a look <a class="reference external" href="https://biochem.web.utah.edu/iwasa/metabolism/chapter2.html">here</a>.</p>
 </section>
 </div><p>In a simplified picture of balanced growth, all metabolic processes are balanced:
 the rate at which material flows into the cell matches the rate at which it is converted, which again matches the production rate of macromolecule precursors.
@@ -468,7 +458,13 @@ but that all internal metabolites (“inside” the metabolic network) are mass-
 <p>Since each enzyme has a maximal catalytic rate (the <span class="math notranslate nohighlight">\(k_{cat}\)</span> value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
 since cellular space is limited, fluxes cannot increase infinitely since there is always an upper bound on a weighted sum of reaction fluxes.
 This constraint implies compromises between different reaction fluxes: one flux can only be increased at the expense of others.</p>
-<p>The mathematical model:</p>
+<div class="proof definition admonition" id="Balanced growth">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Balanced growth)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
+i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
+</section>
+</div><p>The mathematical model:</p>
 <ul class="simple">
 <li><p><em>variables</em> to describe: the metabolic <strong>fluxes</strong> in steady-state metabolism,</p></li>
 <li><p><em>constraints</em> to apply: the <strong>balance</strong> of production and consumption of all <strong>internal</strong> metabolites</p></li>
@@ -477,8 +473,8 @@ This constraint implies compromises between different reaction fluxes: one flux 
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08ef54f2-9e4b-4a0f-8e73-834efabe82a8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-08ef54f2-9e4b-4a0f-8e73-834efabe82a8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7c4d93b3-19d0-4c19-aa1f-1a1bd58168e2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7c4d93b3-19d0-4c19-aa1f-1a1bd58168e2" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -487,8 +483,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7f2570f-1806-44f8-8093-9d4e2a3d24c5">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d7f2570f-1806-44f8-8093-9d4e2a3d24c5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e61e9712-2944-4f28-8d1f-098f8def98c2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e61e9712-2944-4f28-8d1f-098f8def98c2" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -512,13 +508,20 @@ I   &amp;   0  \\
 <section id="kinetic-models">
 <h2>Kinetic models<a class="headerlink" href="#kinetic-models" title="Link to this heading">#</a></h2>
 <p>Kinetic models are typically formulated as a set of deterministic <strong>ordinary differential equations (ODEs)</strong>.</p>
-<div class="proof definition admonition" id="kinetic variable">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span> (kinetic variable)</p>
+<!-- ```{prf:definition} $k_{cat}$
+:label: k_cat
+
+``` --><div class="proof definition admonition" id="kinetic variables">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (kinetic variables)</p>
 <section class="definition-content" id="proof-content">
-<p>kinetic parameters
-<span class="math notranslate nohighlight">\(k_{cat}\)</span>
-<span class="math notranslate nohighlight">\(\frac {k_{cat}}{ K_M}\)</span>
-<span class="math notranslate nohighlight">\(K_M\)</span></p>
+<p>kinetic parameters:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_{cat}\)</span>: It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
+It indicates the number of substrate molecules converted into product per enzyme molecule per unit time under optimal conditions.
+In simpler terms, it reflects how fast an enzyme can convert substrate into product.</p></li>
+<li><p><span class="math notranslate nohighlight">\(K_M\)</span>:</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac {k_{cat}}{ K_M}\)</span>:</p></li>
+</ul>
 </section>
 </div><p>Assumptions used in the formulation of biological network models</p>
 <table class="table">
@@ -545,18 +548,15 @@ I   &amp;   0  \\
 </tr>
 </tbody>
 </table>
-<p>The **stoichiometric matrix **(<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id1">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">2</a>]</span></p>
+<p>The <strong>stoichiometric matrix</strong> (<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>.</p>
 <div class="proof definition admonition" id="gradient matrix">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (gradient matrix)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (gradient matrix)</p>
 <section class="definition-content" id="proof-content">
-<p>(from <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">2</a>]</span>)
+<p>(from <span id="id3">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>)
 Each link in a reaction map has kinetic properties with which it is associated.
-The reaction rates that describe the kinetic properties are found in the rate laws, <span class="math notranslate nohighlight">\(v(x; k)\)</span>, where the vector <span class="math notranslate nohighlight">\(k\)</span> contains
-all the kinetic constants that appear in the rate laws. Ultimately, these
-properties represent time constants that tell us how quickly a link in a
-network will respond to the concentrations that are involved in that link.
-The reciprocal of these time constants is found in the gradient matrix G,
-whose elements are</p>
+The reaction rates that describe the kinetic properties are found in the rate laws, <span class="math notranslate nohighlight">\(v(x; k)\)</span>, where the vector <span class="math notranslate nohighlight">\(k\)</span> contains all the kinetic constants that appear in the rate laws.
+Ultimately, these properties represent time constants that tell us how quickly a link in a network will respond to the concentrations that are involved in that link.</p>
+<p>The <em>reciprocal</em> of these time constants is found in the gradient matrix <span class="math notranslate nohighlight">\(G\)</span>, whose elements are</p>
 <div class="math notranslate nohighlight">
 \[
 g_{ij} =\frac{\partial v_i}{\partial x_j}
@@ -566,17 +566,29 @@ ulation, given the natural sequence diversity that exists. Therefore, the
 gradient matrix is a <em>genetically determined</em> matrix. Two members of the
 population may have a different <span class="math notranslate nohighlight">\(G\)</span> matrix.</p>
 </section>
-</div><p>Mathematically speaking, <span class="math notranslate nohighlight">\(G\)</span> has several challenging features.
+</div><!-- reciprocal:  the number 1/x, which multiplied by x gives the product 1, also known as a reciprocal --><p>Mathematically speaking, <span class="math notranslate nohighlight">\(G\)</span> has several challenging features.
 Unlike the stoichiometric matrix, its numerical values vary over many orders of magnitude.
 Some links have very fast response times, while others have long response times.
 The entries of <span class="math notranslate nohighlight">\(G\)</span> are real numbers and, therefore, are not “knowable.”
 The values of <span class="math notranslate nohighlight">\(G\)</span> will always come with an error bar associated with the experimental method used to determine them.
 It has though, the same sparsity properties as the matrix <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <div class="proof definition admonition" id="jacobian matrix">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Jacobian matrix)</p>
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Jacobian matrix)</p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(S\)</span> gives us network structure and <span class="math notranslate nohighlight">\(G\)</span> gives us kinetic parameters of the links in the network.
 Their product, the <strong>Jacobian matrix</strong> (<span class="math notranslate nohighlight">\(J\)</span>)  gives us the network dynamics.</p>
+</section>
+</div><div class="proof observation admonition" id="units">
+<p class="admonition-title"><span class="caption-number">Observation 1 </span></p>
+<section class="observation-content" id="proof-content">
+<p>Fluxes are measured in moles per unit of time per cell.</p>
+</section>
+</div><div class="proof definition admonition" id="MASS">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (MASS model)</p>
+<section class="definition-content" id="proof-content">
+<p>a metabolic network model that explicitly accounts for the regulatory enzymes, and all their bound states, as components in the network.
+The result is a data-driven process for constructing mass action stoichiometric simulation (MASS) models that are based on mapping top-down omics data onto bottom-up network reconstructions.</p>
+<p>For more about MASS models you may check Palsson’s book on dynamic models <span id="id4">[<a class="reference internal" href="bibliography.html#id6" title="Bernhard Ø Palsson. Systems biology: simulation of dynamic network states. Cambridge University Press, 2011.">4</a>]</span> and one of his papers <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. Biophysical journal, 98(2):175–185, 2010.">5</a>]</span></p>
 </section>
 </div></section>
 </section>
