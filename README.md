@@ -139,3 +139,7 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 
 that will be numbered. 
 
+### Documentation 
+
+We use definitions, observations etc. from [sphinx-proof](https://sphinx-proof.readthedocs.io/en/latest/syntax.html#observations).
+
