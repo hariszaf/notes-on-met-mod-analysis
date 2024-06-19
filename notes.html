@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Metabolic models &#8212; Notes on metabolic modelling analysis</title>
+    <title>&lt;no title&gt; &#8212; Notes on metabolic modelling analysis</title>
   
   
   
@@ -58,14 +58,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'background';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes';</script>
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,9 +178,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -238,7 +236,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/background.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/notes.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +284,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/background.ipynb" target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/notes.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +301,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fbackground.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fnotes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +331,7 @@
       
       
       
-      <li><a href="_sources/background.ipynb" target="_blank"
+      <li><a href="_sources/notes.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -417,7 +415,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Metabolic models</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,9 +424,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -439,159 +437,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
-<h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
-<div class="proof definition admonition" id="flux">
-<p class="admonition-title"><span class="caption-number">Definition 2 </span> (flux)</p>
-<section class="definition-content" id="proof-content">
-<p>(from <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Gregory Stephanopoulos. Metabolic fluxes and metabolic engineering. Metabolic engineering, 1(1):1–11, 1999.">2</a>]</span>)
-The metabolic flux can be defined as the rate at which material is processed through a metabolic pathway.
-A reaction’s flux refers to the <strong>rate</strong> at which the biochemical reaction proceeds in a biological system.
-It’s a measure of <em>how quickly</em> reactants are being converted into products within a specific cellular context.</p>
-<p>For insightful visualization that may help you with the concept of a flux, you may have a look <a class="reference external" href="https://biochem.web.utah.edu/iwasa/metabolism/chapter2.html">here</a>.</p>
-</section>
-</div><p>In a simplified picture of balanced growth, all metabolic processes are balanced:
-the rate at which material flows into the cell matches the rate at which it is converted, which again matches the production rate of macromolecule precursors.
-In addition, we assume that these fluxes are constant, such that the whole metabolic network is in a ‘steady-state’.
-Taken together, we thus assume that the metabolic network can take up and produce external metabolites (e.g. extracellular metabolites and macromolecular precursors),
-but that all internal metabolites (“inside” the metabolic network) are mass-balanced, that is, for each of these metabolites, production and consumption cancel out.</p>
-<p>Since each enzyme has a maximal catalytic rate (the <span class="math notranslate nohighlight">\(k_{cat}\)</span> value), a reaction flux will require a certain (minimal) amount of enzyme, which takes up cellular space;
-since cellular space is limited, fluxes cannot increase infinitely since there is always an upper bound on a weighted sum of reaction fluxes.
-This constraint implies compromises between different reaction fluxes: one flux can only be increased at the expense of others.</p>
-<div class="proof definition admonition" id="Balanced growth">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Balanced growth)</p>
-<section class="definition-content" id="proof-content">
-<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
-i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
-</section>
-</div><p>The mathematical model:</p>
-<ul class="simple">
-<li><p><em>variables</em> to describe: the metabolic <strong>fluxes</strong> in steady-state metabolism,</p></li>
-<li><p><em>constraints</em> to apply: the <strong>balance</strong> of production and consumption of all <strong>internal</strong> metabolites</p></li>
-</ul>
-<p>Importantly, the model will be able to describe compromise: for example, with a given carbon influx and assuming mass balance, the carbon atoms can either be
-used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
-<p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
-<p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f10b6451-61b2-40bc-b5b7-fa54ba76eb68">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f10b6451-61b2-40bc-b5b7-fa54ba76eb68" title="Permalink to this equation">#</a></span>\[\begin{align}
-N \times  v = 0 = N \times v^+  - N \times v^- = 
-\left[ N \ {-N} \right] 
-\begin{bmatrix}
-    v^+  \\
-    v^-
-\end{bmatrix} \qquad
-\end{align}\]</div>
-<p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c694ddd-7ab3-46a4-a337-12cfab516035">
-<span class="eqno">(2)<a class="headerlink" href="#equation-2c694ddd-7ab3-46a4-a337-12cfab516035" title="Permalink to this equation">#</a></span>\[\begin{align}
-A
-\begin{bmatrix}
-    v^+  \\
-    v^-
-\end{bmatrix}
-\geq 0
-\end{align}\]</div>
-<p>where:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix}
-N  &amp;  {-N} \\
-{-N} &amp;  N \\
-I   &amp;   0  \\
-0   &amp;   I 
-\end{bmatrix}
-\end{split}\]</div>
-<p>The set of constraints on (<span class="math notranslate nohighlight">\(v^+\)</span> , <span class="math notranslate nohighlight">\(v^−\)</span> ) define a <strong>polyhedral cone</strong> and since they are non-negative, the cone is also pointed, meaning it contains no complete line and the zero vector is the only vertex
-(extreme point) of the cone.</p>
-<p>The space of solutions that satisfies  is called the <strong>flux cone</strong>.</p>
-<section id="kinetic-models">
-<h2>Kinetic models<a class="headerlink" href="#kinetic-models" title="Link to this heading">#</a></h2>
-<p>Kinetic models are typically formulated as a set of deterministic <strong>ordinary differential equations (ODEs)</strong>.</p>
-<!-- ```{prf:definition} $k_{cat}$
-:label: k_cat
-
-``` --><div class="proof definition admonition" id="kinetic variables">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span> (kinetic variables)</p>
-<section class="definition-content" id="proof-content">
-<p>kinetic parameters:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(k_{cat}\)</span>: It is the maximum rate at which an enzyme can catalyze a specific reaction when it is saturated with substrate.
-It indicates the number of substrate molecules converted into product per enzyme molecule per unit time under optimal conditions.
-In simpler terms, it reflects how fast an enzyme can convert substrate into product.</p></li>
-<li><p><span class="math notranslate nohighlight">\(K_M\)</span>:</p></li>
-<li><p><span class="math notranslate nohighlight">\(\frac {k_{cat}}{ K_M}\)</span>:</p></li>
-</ul>
-</section>
-</div><p>Assumptions used in the formulation of biological network models</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Assumption</p></th>
-<th class="head text-center"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>Continuum assumption</p></td>
-<td class="text-center"><p>Do not deal with individual molecules, but treat medium as a continuum</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Finer spatial structure ignored</p></td>
-<td class="text-center"><p>Medium is homogeneous</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>Constant-volume assumption</p></td>
-<td class="text-center"><p>V is time-invariant, <span class="math notranslate nohighlight">\(\frac {dV} {dt} = 0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Constant temperature</p></td>
-<td class="text-center"><p>Isothermal systems; Kinetic properties a constant</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>Ignore physico-chemical factors</p></td>
-<td class="text-center"><p>Electroneutrality and osmotic pressure can be important factors, but are ignored</p></td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>stoichiometric matrix</strong> (<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>.</p>
-<div class="proof definition admonition" id="gradient matrix">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span> (gradient matrix)</p>
-<section class="definition-content" id="proof-content">
-<p>(from <span id="id3">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>)
-Each link in a reaction map has kinetic properties with which it is associated.
-The reaction rates that describe the kinetic properties are found in the rate laws, <span class="math notranslate nohighlight">\(v(x; k)\)</span>, where the vector <span class="math notranslate nohighlight">\(k\)</span> contains all the kinetic constants that appear in the rate laws.
-Ultimately, these properties represent time constants that tell us how quickly a link in a network will respond to the concentrations that are involved in that link.</p>
-<p>The <em>reciprocal</em> of these time constants is found in the gradient matrix <span class="math notranslate nohighlight">\(G\)</span>, whose elements are</p>
-<div class="math notranslate nohighlight">
-\[
-g_{ij} =\frac{\partial v_i}{\partial x_j}
-\]</div>
-<p>These constants may change from one member to the next in a biopop-
-ulation, given the natural sequence diversity that exists. Therefore, the
-gradient matrix is a <em>genetically determined</em> matrix. Two members of the
-population may have a different <span class="math notranslate nohighlight">\(G\)</span> matrix.</p>
-</section>
-</div><!-- reciprocal:  the number 1/x, which multiplied by x gives the product 1, also known as a reciprocal --><p>Mathematically speaking, <span class="math notranslate nohighlight">\(G\)</span> has several challenging features.
-Unlike the stoichiometric matrix, its numerical values vary over many orders of magnitude.
-Some links have very fast response times, while others have long response times.
-The entries of <span class="math notranslate nohighlight">\(G\)</span> are real numbers and, therefore, are not “knowable.”
-The values of <span class="math notranslate nohighlight">\(G\)</span> will always come with an error bar associated with the experimental method used to determine them.
-It has though, the same sparsity properties as the matrix <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<div class="proof definition admonition" id="jacobian matrix">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Jacobian matrix)</p>
-<section class="definition-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(S\)</span> gives us network structure and <span class="math notranslate nohighlight">\(G\)</span> gives us kinetic parameters of the links in the network.
-Their product, the <strong>Jacobian matrix</strong> (<span class="math notranslate nohighlight">\(J\)</span>)  gives us the network dynamics.</p>
-</section>
-</div><div class="proof observation admonition" id="units">
-<p class="admonition-title"><span class="caption-number">Observation 1 </span></p>
-<section class="observation-content" id="proof-content">
-<p>Fluxes are measured in moles per unit of time per cell.</p>
-</section>
-</div><div class="proof definition admonition" id="MASS">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (MASS model)</p>
-<section class="definition-content" id="proof-content">
-<p>a metabolic network model that explicitly accounts for the regulatory enzymes, and all their bound states, as components in the network.
-The result is a data-driven process for constructing mass action stoichiometric simulation (MASS) models that are based on mapping top-down omics data onto bottom-up network reconstructions.</p>
-<p>For more about MASS models you may check Palsson’s book on dynamic models <span id="id4">[<a class="reference internal" href="bibliography.html#id6" title="Bernhard Ø Palsson. Systems biology: simulation of dynamic network states. Cambridge University Press, 2011.">4</a>]</span> and one of his papers <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. Biophysical journal, 98(2):175–185, 2010.">5</a>]</span></p>
-</section>
-</div></section>
-</section>
+  <p>Extracellular reactions COMETS includes the capability to simulate reactions happening in the extracellular environment, without association to a specific organism. Users can implement either elementary reactions of arbitrary order based on mass-action kinetics, or enzyme-catalyzed reactions obeying Michaelis–Menten kinetics, e.g., for the simulation of extracellular enzymes.</p>
+<p>a simple binding reaction is defined with the form A + B → C. In the second case, an enzyme, E, catalyzes the conversion of F → G. Extracellular reactions are present in some microbial communities owing to the activity of secreted extracellular enzymes85–88. The example presented here simulates an extracellular reaction showing the role of extracellular cellulase in the degradation of cellulose.</p>
 
     <script type="text/x-thebe-config">
     {
@@ -623,24 +470,6 @@ The result is a data-driven process for constructing mass action stoichiometric 
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="bibliography.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -656,9 +485,9 @@ The result is a data-driven process for constructing mass action stoichiometric 
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>
