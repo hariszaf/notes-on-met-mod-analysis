@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Media &#8212; Notes on metabolic modelling analysis</title>
+    <title>How to &#8212; Notes on metabolic modelling analysis</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -181,7 +181,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Media</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>How to</em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -417,7 +417,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Media</h1>
+    <h1>How to</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,7 +427,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -439,12 +443,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Extracellular reactions</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to">
+<h1><em>How to</em><a class="headerlink" href="#how-to" title="Link to this heading">#</a></h1>
+<p>In this notebook, we will keep track of handy implementations for metabolic modeling related tasks.</p>
+<section id="media-and-environment-setup">
+<h2>Media and environment setup<a class="headerlink" href="#media-and-environment-setup" title="Link to this heading">#</a></h2>
+<section id="extracellular-reactions">
+<h3>Extracellular reactions<a class="headerlink" href="#extracellular-reactions" title="Link to this heading">#</a></h3>
 <p>COMETS includes the capability to simulate reactions happening in the extracellular environment, without association to a specific organism. Users can implement either elementary reactions of arbitrary order based on mass-action kinetics, or enzyme-catalyzed reactions obeying Michaelis–Menten kinetics, e.g., for the simulation of extracellular enzymes.</p>
-<section id="media">
-<h1>Media<a class="headerlink" href="#media" title="Link to this heading">#</a></h1>
+</section>
 <section id="get-complete-medium-for-modelseed">
-<h2>Get complete medium for ModelSEED<a class="headerlink" href="#get-complete-medium-for-modelseed" title="Link to this heading">#</a></h2>
+<h3>Get complete medium for ModelSEED<a class="headerlink" href="#get-complete-medium-for-modelseed" title="Link to this heading">#</a></h3>
 <p>With the term <em>complete medium</em>* we describe an <em>in silico</em> object where any compound that could be used as a nutrient, it is available for the model.</p>
 <p>To build this object for the case of ModelSEED, we need to first get all the possible compounds.
 And we can do this by first, getting locally the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase">ModelSEEDDatabase repo</a>.</p>
@@ -520,6 +529,7 @@ and export in a <code class="docutils literal notranslate"><span class="pre">.cs
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -585,7 +595,11 @@ and export in a <code class="docutils literal notranslate"><span class="pre">.cs
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -64,7 +64,7 @@
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="next" title="How to" href="notes.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,6 +183,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html"><em>How to</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -473,8 +475,8 @@ i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f10b6451-61b2-40bc-b5b7-fa54ba76eb68">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f10b6451-61b2-40bc-b5b7-fa54ba76eb68" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-261cbf69-9aa1-4399-b729-e6975e143d90">
+<span class="eqno">(1)<a class="headerlink" href="#equation-261cbf69-9aa1-4399-b729-e6975e143d90" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -483,8 +485,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c694ddd-7ab3-46a4-a337-12cfab516035">
-<span class="eqno">(2)<a class="headerlink" href="#equation-2c694ddd-7ab3-46a4-a337-12cfab516035" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1a33674c-e1a0-4fb7-8ada-16d82ef87113">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1a33674c-e1a0-4fb7-8ada-16d82ef87113" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -633,11 +635,11 @@ The result is a data-driven process for constructing mass action stoichiometric 
       </div>
     </a>
     <a class="right-next"
-       href="bibliography.html"
+       href="notes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title"><em>How to</em></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
