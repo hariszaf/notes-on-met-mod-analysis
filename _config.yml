@@ -2,8 +2,7 @@
 title: Notes on metabolic modelling analysis
 author: Haris Zafeiropoulos
 copyright: "2024"
-# The logo gets the notebooks/ as root
-logo: logo.png
+logo: logo.png  # The logo gets the notebooks/ as root
 
 execute:
   timeout: -1
