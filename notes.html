@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>How to &#8212; Notes on metabolic modelling analysis</title>
+    <title>Media &#8212; Notes on metabolic modelling analysis</title>
   
   
   
@@ -181,7 +181,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>How to</em></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -417,7 +417,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>How to</h1>
+    <h1>Media</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,7 +427,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-have-extracellular-reactions-on-my-model">Can I have extracellular reactions on my model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
 </ul>
             </nav>
         </div>
@@ -439,18 +439,85 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="how-to">
-<h1><em>How to</em><a class="headerlink" href="#how-to" title="Link to this heading">#</a></h1>
-<p>In this notebook, we keep track of implementations of tricky tasks.</p>
-<section id="can-i-have-extracellular-reactions-on-my-model">
-<h2>Can I have extracellular reactions on my model<a class="headerlink" href="#can-i-have-extracellular-reactions-on-my-model" title="Link to this heading">#</a></h2>
-<p>COMETS includes the capability to simulate reactions happening in the extracellular environment, without association to a specific organism.
-Users can implement either elementary reactions of arbitrary order based on mass-action kinetics, or enzyme-catalyzed reactions obeying Michaelis–Menten kinetics,
-e.g., for the simulation of extracellular enzymes.</p>
-<p>Extracellular reactions are present in some microbial communities owing to the activity of secreted extracellular enzymes.
-They can also represent feed-back loops in systems like a plant’s root.</p>
-<p>For an example have a look at this <a class="reference external" href="https://github.com/segrelab/COMETS_Protocols/tree/master/COMETS_protocols/COMETS_example_Extracellular_Reactions/Matlab">COMETS protocol</a>.
-To perform this, you will have first to follow the steps mentioned in the <a class="reference external" href="https://www.nature.com/articles/s41596-021-00593-3">COMETS recent paper</a>.</p>
+  <p>Extracellular reactions</p>
+<p>COMETS includes the capability to simulate reactions happening in the extracellular environment, without association to a specific organism. Users can implement either elementary reactions of arbitrary order based on mass-action kinetics, or enzyme-catalyzed reactions obeying Michaelis–Menten kinetics, e.g., for the simulation of extracellular enzymes.</p>
+<section id="media">
+<h1>Media<a class="headerlink" href="#media" title="Link to this heading">#</a></h1>
+<section id="get-complete-medium-for-modelseed">
+<h2>Get complete medium for ModelSEED<a class="headerlink" href="#get-complete-medium-for-modelseed" title="Link to this heading">#</a></h2>
+<p>With the term <em>complete medium</em>* we describe an <em>in silico</em> object where any compound that could be used as a nutrient, it is available for the model.</p>
+<p>To build this object for the case of ModelSEED, we need to first get all the possible compounds.
+And we can do this by first, getting locally the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase">ModelSEEDDatabase repo</a>.</p>
+<p>Then we can explore the <code class="docutils literal notranslate"><span class="pre">Biochemistry</span></code> folder of that to retrieve all possible nutrients that could be imported in our model.</p>
+<p>From the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase/tree/dev/Biochemistry">Biochemistry folder of the dev branch</a> of the ModelSEEDDatabase repository, run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="o">-</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span> <span class="n">reaction_</span><span class="o">*.</span><span class="n">tsv</span>   <span class="o">&gt;</span> <span class="n">TRANSPORT_REACTIONS</span><span class="o">.</span><span class="n">tsv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">awk</span> <span class="o">-</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span> <span class="n">reaction_</span><span class="o">*.</span><span class="n">tsv</span>   <span class="o">&gt;</span> <span class="n">TRANSPORT_REACTIONS</span><span class="o">.</span><span class="n">tsv</span>
+                                               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, with something like the following Python chunk, you can build the complete medium
+and export in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that with the applied format, could be used for gapfilling with the <code class="docutils literal notranslate"><span class="pre">fill</span></code> command of the <code class="docutils literal notranslate"><span class="pre">gapseq</span></code> tool.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_to_gapseq_format</span><span class="p">(</span><span class="n">all_compounds</span><span class="p">,</span> <span class="n">cpd2name</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write a 3-col csv file with the compound id, its name and a boundary flux of 1000</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">all_compounds</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">cpd2name</span><span class="p">:</span>
+                <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">compound</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">cpd2name</span><span class="p">[</span><span class="n">compound</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">1000</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compound </span><span class="si">{</span><span class="n">compound</span><span class="si">}</span><span class="s2"> not found in cpd2name dictionary&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total compounds written: </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">process_transport_reactions</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse the TRANSPORT_REACTIONS.tsv file to export compounds that should be part of the complete medium.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="n">ex</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">cpd2name</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">all_compounds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">reaction</span> <span class="ow">in</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">compounds</span> <span class="o">=</span> <span class="n">reaction</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">all_compounds</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">c2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cpd2name</span><span class="p">:</span>
+                <span class="n">cpd2name</span><span class="p">[</span><span class="n">c2</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">if</span> <span class="n">output_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">write_to_gapseq_format</span><span class="p">(</span><span class="n">all_compounds</span><span class="p">,</span> <span class="n">cpd2name</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+
+<span class="c1"># Main execution</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">process_transport_reactions</span><span class="p">(</span><span class="s2">&quot;TRANSPORT_REACTIONS.tsv&quot;</span><span class="p">,</span> <span class="s2">&quot;complete_modelseed_medium.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -518,7 +585,7 @@ To perform this, you will have first to follow the steps mentioned in the <a cla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-have-extracellular-reactions-on-my-model">Can I have extracellular reactions on my model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
 </ul>
   </nav></div>
 
