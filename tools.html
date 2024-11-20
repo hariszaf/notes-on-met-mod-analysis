@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes.html"><em>How to</em></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Software and resources for metabolic modeling analysis</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -427,20 +428,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Software and resources for metabolic modeling analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-constraints">Further constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics">Thermodynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-databases">Further databases</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#databases">Databases</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-approaches">Topological approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-approaches">Dynamic approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-modelling">Community modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">Data integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-resources-and-tools-of-interest">Other resources and tools of interest</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -496,9 +503,8 @@ So, feel free to make a PR adding something or contact us to do that for you.</p
 ** part of the CNApy library</p></li>
 </ul>
 </section>
-</section>
 <section id="enzymes">
-<h2>Enzymes<a class="headerlink" href="#enzymes" title="Link to this heading">#</a></h2>
+<h3>Enzymes<a class="headerlink" href="#enzymes" title="Link to this heading">#</a></h3>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
@@ -526,38 +532,70 @@ So, feel free to make a PR adding something or contact us to do that for you.</p
 <p>*Python-based, open-source optimization modeling language</p>
 </section>
 <section id="transporter-annotations">
-<h2>Transporter annotations<a class="headerlink" href="#transporter-annotations" title="Link to this heading">#</a></h2>
+<h3>Transporter annotations<a class="headerlink" href="#transporter-annotations" title="Link to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Architecture</p></th>
+<th class="head text-left"><p>Repo</p></th>
+<th class="head text-left"><p>DOI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>SPOT*</p></td>
+<td class="text-left"><p>machine learning model that can successfully predict specific substrates for arbitrary transport protein</p></td>
+<td class="text-left"><p>stand-alone</p></td>
+<td class="text-left"><p><a class="reference external" href="https://github.com/AlexanderKroll/SPOT">GitHub</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1371/journal.pbio.3002807">OA</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>TranSyT</p></td>
+<td class="text-left"><p>Identifies transport systems and the compounds carried across membranes, based on the annotations of the Transporter Classification Database (TCDB). Generates the respective transport reactions while providing the respective Gene-Protein-Reaction associations.</p></td>
+<td class="text-left"><p><a class="reference external" href="https://transyt.bio.di.uminho.pt">web-sevice</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://github.com/BioSystemsUM/transyt">GitHub</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btad466">OA</a></p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
-<li><p><strong>SPOT</strong></p></li>
+<li><p>They showed that the majority of TCDB entries are of low UniProt-based annotation scores.</p></li>
 </ul>
-<p>machine learning model that can successfully predict specific substrates for arbitrary transport protein</p>
-<p><a class="reference external" href="https://github.com/AlexanderKroll/SPOT">GitHub</a> | <a class="reference external" href="https://doi.org/10.1371/journal.pbio.3002807">paper</a></p>
-<ul class="simple">
-<li><p><strong>TranSyT</strong>
-Identifies transport systems and the compounds carried across membranes, based on the annotations of the Transporter Classification Database (TCDB). In addition, this tool also generates the respective transport reactions while providing the respective Gene-Protein-Reaction associations.</p></li>
-</ul>
-<p>TranSyT can receive as input the organism NCBI taxonomy identifier, its genome sequence in a fasta file format and its constraint-based metabolic model in the SBML file format or a metabolites list in text file format.
-https://transyt.bio.di.uminho.pt</p>
 </section>
-<section id="further-databases">
-<h2>Further databases<a class="headerlink" href="#further-databases" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>equilibrator</strong></p></li>
-</ul>
-<p><a class="reference external" href="https://equilibrator.readthedocs.io/en/latest/tutorial.html#footcite-noor-consistent-2013">equilibrator</a>
-has also an API library
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="databases">
+<h1>Databases<a class="headerlink" href="#databases" title="Link to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Link</p></th>
+<th class="head text-left"><p>Repo</p></th>
+<th class="head text-left"><p>DOI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>equilibrator</p></td>
+<td class="text-left"><p>estimated thermodynamic constants</p></td>
+<td class="text-left"><p><a class="reference external" href="https://equilibrator.readthedocs.io/en/latest/tutorial.html#footcite-noor-consistent-2013">link</a></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1093/nar/gkab1106">OA</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SABIO-RK</p></td>
+<td class="text-left"><p>curated information about biochemical reactions, their kinetic rate equations with parameters and experimental conditions.</p></td>
+<td class="text-left"><p><a class="reference external" href="http://sabio.h-its.org">link</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1093/nar/gkx1065">OA</a></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>has also an API library
 <code class="docutils literal notranslate"><span class="pre">equilibrator-api</span></code>
 <a class="reference external" href="https://equilibrator.readthedocs.io/en/latest/">ReadTheDocs</a> |
 <a class="reference external" href="https://gitlab.com/equilibrator/equilibrator-api">GitLab</a></p>
 <p>and a cache one
 <code class="docutils literal notranslate"><span class="pre">equilibrator-cache</span></code>: A database application for caching data used by eQuilibrator and related projects. Stored data includes compound names, structures, protonation state information, reaction and enzyme info, and cross-references to other databases. All compounds stored in equilibrator-cache are cross-referenced using InChIKey.
 <a class="reference external" href="https://gitlab.com/equilibrator/equilibrator-cache">GitLab</a></p>
-<ul class="simple">
-<li><p><strong>SABIO-RK</strong></p></li>
-</ul>
-<p><a class="reference external" href="http://sabio.h-its.org">SABIO-RK</a> is a curated database that contains information about biochemical reactions,
-their kinetic rate equations with parameters and experimental conditions.</p>
-</section>
 <section id="topological-approaches">
 <h2>Topological approaches<a class="headerlink" href="#topological-approaches" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -672,20 +710,26 @@ A recent approach for dynamic FBA that considers the solution non-uniqueness.</p
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Software and resources for metabolic modeling analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-constraints">Further constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics">Thermodynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-databases">Further databases</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#databases">Databases</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-approaches">Topological approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-approaches">Dynamic approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-modelling">Community modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">Data integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-resources-and-tools-of-interest">Other resources and tools of interest</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
