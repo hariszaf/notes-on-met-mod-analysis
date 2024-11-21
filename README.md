@@ -61,6 +61,13 @@ In our case, the `mybookname` will be the root of the repo, thus we run:
 jupyter-book build .
 ```
 
+> **REMEMBER**
+> 
+> Make sure you always run the `jupyter-book build` command before deploying! 
+> It's also a good practice to first remove the `_build` folder built locally and then run it. 
+
+
+
 - Publish your book online. Once your book is built, you can share it with others. Most common is to build HTML, and host it as a public website. See [Publish your book online](https://jupyterbook.org/en/stable/start/publish.html).
 
 > **Never** edit the `gh-pages` directly! 

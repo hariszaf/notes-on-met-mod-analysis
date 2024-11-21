@@ -3,6 +3,9 @@ root: cover
 chapters:
 - file: intro
 - file: background
-- file: notes
+- file: cba
+- file: howto
 - file: tools
+- file: bioinsight
 - file: bibliography
+
