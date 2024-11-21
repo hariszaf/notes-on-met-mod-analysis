@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bibliography &#8212; Notes on metabolic modelling analysis</title>
+    <title>How to &#8212; Notes on metabolic modelling analysis</title>
   
   
   
@@ -58,11 +58,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'bibliography';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'howto';</script>
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Biological insight" href="bioinsight.html" />
+    <link rel="next" title="Software and resources" href="tools.html" />
+    <link rel="prev" title="Constraint Based Analysis" href="cba.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,11 +182,11 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="bioinsight.html">Biological insight</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -240,7 +241,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/bibliography.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/howto.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/bibliography.ipynb" target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/howto.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fbibliography.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fhowto.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +336,7 @@
       
       
       
-      <li><a href="_sources/bibliography.ipynb" target="_blank"
+      <li><a href="_sources/howto.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -406,7 +407,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -417,11 +420,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bibliography</h1>
+    <h1>How to</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -431,32 +446,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bibliography">
-<h1>Bibliography<a class="headerlink" href="#bibliography" title="Link to this heading">#</a></h1>
-<div class="docutils container" id="id1">
-<div role="list" class="citation-list">
-<div class="citation" id="id2" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<p>Bernhard Palsson. <em>Systems biology</em>. Cambridge university press, 2015.</p>
-</div>
-<div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
-<p>Gregory Stephanopoulos. Metabolic fluxes and metabolic engineering. <em>Metabolic engineering</em>, 1(1):1–11, 1999.</p>
-</div>
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
-<p>Bernhard Ø Palsson. <em>Systems biology: properties of reconstructed networks</em>. Cambridge university press, 2006.</p>
-</div>
-<div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
-<p>Bernhard Ø Palsson. <em>Systems biology: simulation of dynamic network states</em>. Cambridge University Press, 2011.</p>
-</div>
-<div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
-<p>Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. <em>Biophysical journal</em>, 98(2):175–185, 2010.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to">
+<h1>How to<a class="headerlink" href="#how-to" title="Link to this heading">#</a></h1>
+<p>In this notebook, we will keep track of handy implementations for metabolic modeling related tasks.</p>
+<section id="media-and-environment-setup">
+<h2>Media and environment setup<a class="headerlink" href="#media-and-environment-setup" title="Link to this heading">#</a></h2>
+<section id="extracellular-reactions">
+<h3>Extracellular reactions<a class="headerlink" href="#extracellular-reactions" title="Link to this heading">#</a></h3>
+<p>COMETS includes the capability to simulate reactions happening in the extracellular environment, without association to a specific organism. Users can implement either elementary reactions of arbitrary order based on mass-action kinetics, or enzyme-catalyzed reactions obeying Michaelis–Menten kinetics, e.g., for the simulation of extracellular enzymes.</p>
+</section>
+<section id="get-complete-medium-for-modelseed">
+<h3>Get complete medium for ModelSEED<a class="headerlink" href="#get-complete-medium-for-modelseed" title="Link to this heading">#</a></h3>
+<p>With the term <em>complete medium</em>* we describe an <em>in silico</em> object where any compound that could be used as a nutrient, it is available for the model.</p>
+<p>To build this object for the case of ModelSEED, we need to first get all the possible compounds.
+And we can do this by first, getting locally the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase">ModelSEEDDatabase repo</a>.</p>
+<p>Then we can explore the <code class="docutils literal notranslate"><span class="pre">Biochemistry</span></code> folder of that to retrieve all possible nutrients that could be imported in our model.</p>
+<p>From the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase/tree/dev/Biochemistry">Biochemistry folder of the dev branch</a> of the ModelSEEDDatabase repository, run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>awk<span class="w"> </span>-F<span class="s2">&quot;\t&quot;</span><span class="w"> </span><span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span><span class="w"> </span>reaction_*.tsv<span class="w">   </span>&gt;<span class="w"> </span>TRANSPORT_REACTIONS.tsv
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>awk: fatal: cannot open file `reaction_*.tsv&#39; for reading: No such file or directory
+</pre></div>
 </div>
+</div>
+</div>
+<p>Now, with something like the following Python chunk, you can build the complete medium
+and export in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that with the applied format, could be used for gapfilling with the <code class="docutils literal notranslate"><span class="pre">fill</span></code> command of the <code class="docutils literal notranslate"><span class="pre">gapseq</span></code> tool.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_to_gapseq_format</span><span class="p">(</span><span class="n">all_compounds</span><span class="p">,</span> <span class="n">cpd2name</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write a 3-col csv file with the compound id, its name and a boundary flux of 1000</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">all_compounds</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">cpd2name</span><span class="p">:</span>
+                <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">compound</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">cpd2name</span><span class="p">[</span><span class="n">compound</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">1000</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compound </span><span class="si">{</span><span class="n">compound</span><span class="si">}</span><span class="s2"> not found in cpd2name dictionary&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total compounds written: </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">process_transport_reactions</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse the TRANSPORT_REACTIONS.tsv file to export compounds that should be part of the complete medium.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="n">ex</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">cpd2name</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">all_compounds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">reaction</span> <span class="ow">in</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">compounds</span> <span class="o">=</span> <span class="n">reaction</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">compounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">all_compounds</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">c2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cpd2name</span><span class="p">:</span>
+                <span class="n">cpd2name</span><span class="p">[</span><span class="n">c2</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">if</span> <span class="n">output_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">write_to_gapseq_format</span><span class="p">(</span><span class="n">all_compounds</span><span class="p">,</span> <span class="n">cpd2name</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+
+<span class="c1"># Main execution</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">process_transport_reactions</span><span class="p">(</span><span class="s2">&quot;TRANSPORT_REACTIONS.tsv&quot;</span><span class="p">,</span> <span class="s2">&quot;complete_modelseed_medium.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total compounds written: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,13 +567,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="bioinsight.html"
+       href="cba.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Biological insight</p>
+        <p class="prev-next-title">Constraint Based Analysis</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="tools.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Software and resources</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -505,7 +591,24 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

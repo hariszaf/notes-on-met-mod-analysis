@@ -62,8 +62,6 @@
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Software and resources for metabolic modeling analysis" href="tools.html" />
-    <link rel="prev" title="Metabolic models" href="background.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,11 +178,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>How to</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources for metabolic modeling analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bioinsight.html">Biological insight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -461,15 +464,12 @@ And we can do this by first, getting locally the <a class="reference external" h
 <p>From the <a class="reference external" href="https://github.com/ModelSEED/ModelSEEDDatabase/tree/dev/Biochemistry">Biochemistry folder of the dev branch</a> of the ModelSEEDDatabase repository, run:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="o">-</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span> <span class="n">reaction_</span><span class="o">*.</span><span class="n">tsv</span>   <span class="o">&gt;</span> <span class="n">TRANSPORT_REACTIONS</span><span class="o">.</span><span class="n">tsv</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>awk<span class="w"> </span>-F<span class="s2">&quot;\t&quot;</span><span class="w"> </span><span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span><span class="w"> </span>reaction_*.tsv<span class="w">   </span>&gt;<span class="w"> </span>TRANSPORT_REACTIONS.tsv
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">awk</span> <span class="o">-</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="s1">&#39;$6 != 1 &amp;&amp; $18==0  {print $5}&#39;</span> <span class="n">reaction_</span><span class="o">*.</span><span class="n">tsv</span>   <span class="o">&gt;</span> <span class="n">TRANSPORT_REACTIONS</span><span class="o">.</span><span class="n">tsv</span>
-                                               <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>awk: fatal: cannot open file `reaction_*.tsv&#39; for reading: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -526,6 +526,11 @@ and export in a <code class="docutils literal notranslate"><span class="pre">.cs
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total compounds written: 0
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -561,24 +566,6 @@ and export in a <code class="docutils literal notranslate"><span class="pre">.cs
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="background.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Metabolic models</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tools.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Software and resources for metabolic modeling analysis</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

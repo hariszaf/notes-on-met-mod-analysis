@@ -64,7 +64,7 @@
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to" href="notes.html" />
+    <link rel="next" title="Constraint Based Analysis" href="cba.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,8 +183,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Metabolic models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes.html"><em>How to</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources for metabolic modeling analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bioinsight.html">Biological insight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -487,8 +490,8 @@ i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-099984d5-ca37-45ca-bcd8-61abe28c9caf">
-<span class="eqno">(1)<a class="headerlink" href="#equation-099984d5-ca37-45ca-bcd8-61abe28c9caf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7defbe22-c93b-49d2-8539-a1f5fd4209c4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7defbe22-c93b-49d2-8539-a1f5fd4209c4" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -497,8 +500,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d40d388-c707-4c42-b68b-62c4d29a3179">
-<span class="eqno">(2)<a class="headerlink" href="#equation-5d40d388-c707-4c42-b68b-62c4d29a3179" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0760ad56-87f8-49de-94d0-3a60fcf93298">
+<span class="eqno">(2)<a class="headerlink" href="#equation-0760ad56-87f8-49de-94d0-3a60fcf93298" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -659,11 +662,11 @@ The result is a data-driven process for constructing mass action stoichiometric 
       </div>
     </a>
     <a class="right-next"
-       href="notes.html"
+       href="cba.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><em>How to</em></p>
+        <p class="prev-next-title">Constraint Based Analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
