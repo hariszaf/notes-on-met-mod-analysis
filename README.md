@@ -150,3 +150,22 @@ that will be numbered.
 
 We use definitions, observations etc. from [sphinx-proof](https://sphinx-proof.readthedocs.io/en/latest/syntax.html#observations).
 
+Also, the [dollarmath] and [amsmath] Myst extensions. 
+
+> Example for how to make a note:
+```
+:::{note}
+Here is a note
+:::
+```
+
+> Example for important messages:
+```
+::::{important}
+:::{note}
+This text is **standard** _Markdown_
+:::
+::::
+```
+
+

@@ -1,11 +1,10 @@
 format: jb-book
 root: cover
 chapters:
-- file: intro
-- file: background
-- file: cba
-- file: howto
-- file: tools
-- file: bioinsight
-- file: bibliography
-
+  - file: intro
+  - file: metmodels
+  - file: cba
+  - file: howto
+  - file: tools
+  - file: bioinsight
+  - file: bibliography

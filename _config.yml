@@ -2,7 +2,7 @@
 title: Notes on metabolic modelling analysis
 author: Haris Zafeiropoulos
 copyright: "2024"
-logo: logo.png  # The logo gets the notebooks/ as root
+logo: logo.png # The logo gets the notebooks/ as root
 
 execute:
   timeout: -1
@@ -17,12 +17,24 @@ sphinx:
     myst_enable_extensions:
       - amsmath
       - dollarmath
+      - attrs_inline
+      - colon_fence
+      - deflist
+      - fieldlist
+      - html_admonition
+      - html_image
+      - linkify
+      - replacements
+      - smartquotes
+      - strikethrough
+      - substitution
+      - tasklist
 
 html:
-  favicon                   : favicon.png
-  use_edit_page_button      : true
-  use_repository_button     : true
-  use_issues_button         : true
+  favicon: favicon.png
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
 
 latex:
   latex_documents:
@@ -30,7 +42,6 @@ latex:
 
 bibtex_bibfiles:
   - references.bib
-
 
 repository:
   url: https://github.com/hariszaf/notes-on-met-mod-analysis
