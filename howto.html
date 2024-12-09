@@ -180,7 +180,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metmodels.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">How to</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
@@ -430,6 +430,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-programming-software">Linear Programming software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-cplex">Get CPLEX</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>
@@ -449,6 +453,19 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="how-to">
 <h1>How to<a class="headerlink" href="#how-to" title="Link to this heading">#</a></h1>
 <p>In this notebook, we will keep track of handy implementations for metabolic modeling related tasks.</p>
+<section id="linear-programming-software">
+<h2>Linear Programming software<a class="headerlink" href="#linear-programming-software" title="Link to this heading">#</a></h2>
+<section id="get-cplex">
+<h3>Get CPLEX<a class="headerlink" href="#get-cplex" title="Link to this heading">#</a></h3>
+<p>When a software says it has CPLEX as a prerequisite, they refer to the <a class="reference internal" href="#"><span class="xref myst">ILOG CPLEX Optimization Studio</span></a></p>
+<p>Analytical decision support toolkit for rapid development and deployment of optimization models using mathematical and constraint programming. It combines an integrated development environment with the powerful Optimization Programming Language and high-performance CPLEX and CP Optimizer solvers.</p>
+<p><a class="reference external" href="https://hpc-community.unige.ch/t/guide-for-installing-ibm-cplex/2104">https://hpc-community.unige.ch/t/guide-for-installing-ibm-cplex/2104</a></p>
+<p>CPLEX has an academic license and once you get this, you can then set Python and other interfaces to use it.
+However, this process can be rather challenging and more often than not it’s far from straightforward.</p>
+<p><a class="reference external" href="https://hpc-community.unige.ch/t/guide-for-installing-ibm-cplex/2104">In this link</a> I found some good enough notes from 2022.</p>
+<p><a class="reference external" href="https://academic.ibm.com/a2mt/email-auth#/">https://academic.ibm.com/a2mt/email-auth#/</a></p>
+</section>
+</section>
 <section id="media-and-environment-setup">
 <h2>Media and environment setup<a class="headerlink" href="#media-and-environment-setup" title="Link to this heading">#</a></h2>
 <section id="extracellular-reactions">
@@ -600,6 +617,10 @@ and export in a <code class="docutils literal notranslate"><span class="pre">.cs
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-programming-software">Linear Programming software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-cplex">Get CPLEX</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-and-environment-setup">Media and environment setup</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracellular-reactions">Extracellular reactions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-complete-medium-for-modelseed">Get complete medium for ModelSEED</a></li>

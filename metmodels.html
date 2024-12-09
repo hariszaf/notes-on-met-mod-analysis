@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -60,7 +60,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'background';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'metmodels';</script>
     <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -243,7 +243,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/background.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/hariszaf/notes-on-met-mod-analysis/master?urlpath=tree/notebooks/metmodels.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/background.ipynb" target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/edit/master/notebooks/metmodels.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fbackground.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/hariszaf/notes-on-met-mod-analysis/issues/new?title=Issue%20on%20page%20%2Fmetmodels.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="_sources/background.ipynb" target="_blank"
+      <li><a href="_sources/metmodels.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,13 +434,16 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-scale-models">Genome-scale models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymatic-constraints">Enzymatic constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-models">Community models</a></li>
 </ul>
             </nav>
         </div>
@@ -490,8 +493,8 @@ i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7defbe22-c93b-49d2-8539-a1f5fd4209c4">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7defbe22-c93b-49d2-8539-a1f5fd4209c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-722946b9-09d7-4368-b83e-d638795d24db">
+<span class="eqno">(1)<a class="headerlink" href="#equation-722946b9-09d7-4368-b83e-d638795d24db" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -500,8 +503,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0760ad56-87f8-49de-94d0-3a60fcf93298">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0760ad56-87f8-49de-94d0-3a60fcf93298" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3093d33b-43e2-4604-9c92-99de3c1a08a7">
+<span class="eqno">(2)<a class="headerlink" href="#equation-3093d33b-43e2-4604-9c92-99de3c1a08a7" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -525,6 +528,17 @@ I   &amp;   0  \\
 </section>
 <section id="metabolic-models-with-cobrapy">
 <h3>Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code><a class="headerlink" href="#metabolic-models-with-cobrapy" title="Link to this heading">#</a></h3>
+</section>
+<section id="boundary-reactions">
+<h3>Boundary reactions<a class="headerlink" href="#boundary-reactions" title="Link to this heading">#</a></h3>
+<p>As described in the <a class="reference external" href="https://cobrapy.readthedocs.io/en/latest/building_model.html"><code class="docutils literal notranslate"><span class="pre">cobrapy</span></code> ReadTheDocs</a>, boundary reactions are
+<strong>unbalanced pseudo reactions</strong>, that means they fulfill a function for modeling by adding to or removing metabolites from the model system but are not based on real biology.</p>
+<ul class="simple">
+<li><p>An <strong>exchange reaction</strong> is a <em>reversible</em> reaction that adds to or removes an extracellular metabolite from the extracellular compartment.</p></li>
+<li><p>A <strong>demand reaction</strong> is an <em>irreversible</em> reaction that <em>consumes an intracellular metabolite</em>.</p></li>
+<li><p>A <strong>sink</strong> is similar to an exchange, but specifically for <em>intracellular metabolites</em>, i.e., a reversible reaction that adds or removes an intracellular metabolite.</p></li>
+</ul>
+<p>An interesting <a class="reference external" href="https://github.com/opencobra/cobrapy/issues/727">issue</a> on the topic.</p>
 <section id="groups">
 <h4>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h4>
 <p>By <code class="docutils literal notranslate"><span class="pre">group.kind</span></code> one may get the kind of group.</p>
@@ -620,6 +634,21 @@ The result is a data-driven process for constructing mass action stoichiometric 
 <p>For more about MASS models you may check Palsson’s book on dynamic models <span id="id4">[<a class="reference internal" href="bibliography.html#id6" title="Bernhard Ø Palsson. Systems biology: simulation of dynamic network states. Cambridge University Press, 2011.">4</a>]</span> and one of his papers <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. Biophysical journal, 98(2):175–185, 2010.">5</a>]</span></p>
 </section>
 </div></section>
+<section id="enzymatic-constraints">
+<h2>Enzymatic constraints<a class="headerlink" href="#enzymatic-constraints" title="Link to this heading">#</a></h2>
+<p>adssa</p>
+</section>
+<section id="community-models">
+<h2>Community models<a class="headerlink" href="#community-models" title="Link to this heading">#</a></h2>
+<p>Here we keep some insight on how to build such models.</p>
+<p>From <code class="docutils literal notranslate"><span class="pre">cite</span></code>{wedmark_hierarchy_2024}</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Quote</strong>!</p>
+<p>The community model was made by <strong>merging the individual models into a new model</strong> and <strong>connecting them through exchanged metabolites in a shared compartment</strong>.
+Specifically, the exchange reactions of the individual models were connected to the shared metabolites and new exchange reactions between the shared compartment and the environment were created, allowing the inter microbial and environmental exchanges described in Fig 1A of Taffs et al. [26].
+A <strong>pseudo-metabolite consisting of equal shares of biomass from each of the individual microbes</strong> was constructed and used as the substrate in a community biomass reaction, thus requiring balanced growth of all three microbes.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -688,13 +717,16 @@ The result is a data-driven process for constructing mass action stoichiometric 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-scale-models">Genome-scale models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymatic-constraints">Enzymatic constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-models">Community models</a></li>
 </ul>
   </nav></div>
 

@@ -180,7 +180,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metmodels.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
@@ -407,7 +407,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -423,6 +425,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-yield-trade-off">Growth-yield trade-off</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-strategies">Metabolic strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-pathways">Degenerate pathways</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -437,6 +449,30 @@ document.write(`
 <p>Here I keep track of bio facts that can be of use in my <em>in silico</em> explorations.</p>
 <p>Apparently, this notebook will make much less sense since it will include pieces of information that do not necessarily lead somewhere :sweat_smile:</p>
 <p><em>Pseudomonas aeruginosa</em>: May rely on glutamine synthetase and nitrate/nitrite reduction for glutamine production.</p>
+<section id="growth-yield-trade-off">
+<h2>Growth-yield trade-off<a class="headerlink" href="#growth-yield-trade-off" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://doi.org/10.1016/j.jtbi.2014.07.011">Harvey et al.</a> (2014)</p>
+<p>They compared a syntrophic consortia to a monoculture with equivalent metabolic capability.
+They found that <strong>consortia biomass is always lower</strong> than a monoculture with the same metabolic dynamics.</p>
+<p>Increasing the <strong>growth rate</strong> or substrate affinity <strong>does not explain</strong> the observed consortial advantage.
+Increased metabolic pathway efficiency (yield) provides the observed increase in productivity.</p>
+</section>
+<section id="metabolic-strategies">
+<h2>Metabolic strategies<a class="headerlink" href="#metabolic-strategies" title="Link to this heading">#</a></h2>
+<p>Bacteria can <strong>switch from sequential to co-utilization</strong> of the available resources especially when the <strong>concentrations</strong> of those are <strong>low</strong> Okano et al. <span id="id1">[<a class="reference internal" href="bibliography.html#id7" title="Hiroyuki Okano, Rutger Hermsen, and Terence Hwa. Hierarchical and simultaneous utilization of carbon substrates: mechanistic insights, physiological roles, and ecological consequences. Current opinion in microbiology, 63:172–178, 2021.">8</a>]</span>.</p>
+<p>From <a class="reference external" href="https://www.jstor.org/stable/24033837">D’Souza et al.</a> (2014)</p>
+<ul class="simple">
+<li><p>the loss of essential biosynthetic genes was generally beneficial when the required metabolite was sufficiently present in the cells’ growth environment,</p></li>
+<li><p>the metabolite concentration an auxotroph required to attain WT growth levels differed significantly depending on the metabolite as well as the species analyzed,</p></li>
+<li><p>the loss of different genes from the same metabolic pathway resulted in differential fitness consequences for the corresponding mutants, and</p></li>
+<li><p>auxotrophs of two species that lacked the same biosynthetic gene responded very differently when exposed to the same concentrations of the required amino acid</p></li>
+</ul>
+<p>Mycobacterium tuberculosis is a shikimate pathway specialist (22); this pathway is strongly related to aromatic amino acid biosynthesis.</p>
+</section>
+<section id="degenerate-pathways">
+<h2>Degenerate pathways<a class="headerlink" href="#degenerate-pathways" title="Link to this heading">#</a></h2>
+<p><em>E.coli</em> uses can produce tryptophan through the central metabolic pathway, the shikimic acid (SK) pathway, and the chorismate (CHO) pathways.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -494,7 +530,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-yield-trade-off">Growth-yield trade-off</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-strategies">Metabolic strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-pathways">Degenerate pathways</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -180,7 +180,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metmodels.html">Metabolic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cba.html">Constraint Based Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Software and resources</a></li>
@@ -431,16 +431,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Software and resources</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draft-reconstructions">Draft reconstructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-fillers">Gap-fillers</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-constraints">Further constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics">Thermodynamics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#databases">Databases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-approaches">Topological approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-approaches">Dynamic approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-modelling">Community modelling</a></li>
@@ -465,12 +469,99 @@ document.write(`
 <p>In this page we will keep a list of the software approaches we are aware of for the various metabolic modeling tasks.
 Apparently, this list can never be complete, but it can be improved with your contribution!
 So, feel free to make a PR adding something or contact us to do that for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When a hyperlink is given in the <em>Tool</em> column, it points to further commentary on the tool within our e-book.</p>
+</div>
 <section id="reconstruction-gap-flling-validation">
 <h2>Reconstruction, gap-flling, validation<a class="headerlink" href="#reconstruction-gap-flling-validation" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>DEMETER</p></li>
+<li><p><a class="reference external" href="https://fbc-curation.readthedocs.io/en/latest/introduction.html">FROG analysis</a>  <a class="github reference external" href="https://github.com/EBI-BioModels/frog-specification">EBI-BioModels/frog-specification</a></p></li>
 <li></li>
 </ul>
+<section id="draft-reconstructions">
+<h3>Draft reconstructions<a class="headerlink" href="#draft-reconstructions" title="Link to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Architecture</p></th>
+<th class="head text-left"><p>Repo</p></th>
+<th class="head text-left"><p>Documentation</p></th>
+<th class="head text-left"><p>DOI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>carveme</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>gapseq</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ModelSEEDpy</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>PathwayTools</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>metage2metabo</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gap-fillers">
+<h3>Gap-fillers<a class="headerlink" href="#gap-fillers" title="Link to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Architecture</p></th>
+<th class="head text-left"><p>Repo</p></th>
+<th class="head text-left"><p>Documentation</p></th>
+<th class="head text-left"><p>DOI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>DNNGIOR</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">gapseq</span></code>, <code class="docutils literal notranslate"><span class="pre">ModelSEED</span></code> they come with their own gap-filling approaches; see table above for their details.</p>
+</section>
 </section>
 <section id="further-constraints">
 <h2>Further constraints<a class="headerlink" href="#further-constraints" title="Link to this heading">#</a></h2>
@@ -517,7 +608,7 @@ So, feel free to make a PR adding something or contact us to do that for you.</p
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>AutoPACMEN</p></td>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="metmodels.html#enzymatic-constraints"><span class="std std-ref">AutoPACMEN</span></a></p></td>
 <td class="text-left"><p>Retrieves kcat data and adds protein allocation constraints to stoichiometric metabolic models according to the sMOMENT method.</p></td>
 <td class="text-left"><p>stand-alone</p></td>
 <td class="text-left"><p><a class="reference external" href="https://github.com/klamt-lab/autopacmen/tree/master">GitHub</a></p></td>
@@ -532,36 +623,6 @@ So, feel free to make a PR adding something or contact us to do that for you.</p
 </tbody>
 </table>
 <p>*Python-based, open-source optimization modeling language</p>
-</section>
-<section id="transporter-annotations">
-<h3>Transporter annotations<a class="headerlink" href="#transporter-annotations" title="Link to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
-<th class="head text-left"><p>Description</p></th>
-<th class="head text-left"><p>Architecture</p></th>
-<th class="head text-left"><p>Repo</p></th>
-<th class="head text-left"><p>DOI</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>SPOT*</p></td>
-<td class="text-left"><p>machine learning model that can successfully predict specific substrates for arbitrary transport protein</p></td>
-<td class="text-left"><p>stand-alone</p></td>
-<td class="text-left"><p><a class="reference external" href="https://github.com/AlexanderKroll/SPOT">GitHub</a></p></td>
-<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1371/journal.pbio.3002807">OA</a></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>TranSyT</p></td>
-<td class="text-left"><p>Identifies transport systems and the compounds carried across membranes, based on the annotations of the Transporter Classification Database (TCDB). Generates the respective transport reactions while providing the respective Gene-Protein-Reaction associations.</p></td>
-<td class="text-left"><p><a class="reference external" href="https://transyt.bio.di.uminho.pt">web-sevice</a></p></td>
-<td class="text-left"><p><a class="reference external" href="https://github.com/BioSystemsUM/transyt">GitHub</a></p></td>
-<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btad466">OA</a></p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>They showed that the majority of TCDB entries are of low UniProt-based annotation scores.</p></li>
-</ul>
 </section>
 </section>
 </section>
@@ -595,6 +656,36 @@ So, feel free to make a PR adding something or contact us to do that for you.</p
 <p>and a cache one
 <code class="docutils literal notranslate"><span class="pre">equilibrator-cache</span></code>: A database application for caching data used by eQuilibrator and related projects. Stored data includes compound names, structures, protonation state information, reaction and enzyme info, and cross-references to other databases. All compounds stored in equilibrator-cache are cross-referenced using InChIKey.
 <a class="reference external" href="https://gitlab.com/equilibrator/equilibrator-cache">GitLab</a></p>
+<section id="transporter-annotations">
+<h2>Transporter annotations<a class="headerlink" href="#transporter-annotations" title="Link to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tool</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Architecture</p></th>
+<th class="head text-left"><p>Repo</p></th>
+<th class="head text-left"><p>DOI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>SPOT*</p></td>
+<td class="text-left"><p>machine learning model that can successfully predict specific substrates for arbitrary transport protein</p></td>
+<td class="text-left"><p>stand-alone</p></td>
+<td class="text-left"><p><a class="reference external" href="https://github.com/AlexanderKroll/SPOT">GitHub</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1371/journal.pbio.3002807">OA</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>TranSyT</p></td>
+<td class="text-left"><p>Identifies transport systems and the compounds carried across membranes, based on the annotations of the Transporter Classification Database (TCDB). Generates the respective transport reactions while providing the respective Gene-Protein-Reaction associations.</p></td>
+<td class="text-left"><p><a class="reference external" href="https://transyt.bio.di.uminho.pt">web-sevice</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://github.com/BioSystemsUM/transyt">GitHub</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btad466">OA</a></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>They showed that the majority of TCDB entries are of low UniProt-based annotation scores.</p></li>
+</ul>
+</section>
 <section id="topological-approaches">
 <h2>Topological approaches<a class="headerlink" href="#topological-approaches" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -631,8 +722,7 @@ A recent approach for dynamic FBA that considers the solution non-uniqueness.</p
 <li><p>FASTCROMICS</p></li>
 <li><p>TRFBA</p></li>
 </ul>
-<p>tellurium:</p>
-<p>https://tellurium.analogmachine.org</p>
+<p><a class="reference external" href="https://tellurium.analogmachine.org">tellurium</a></p>
 <p>A Python Environment for Reproducible Dynamical Modeling of Biological Networks</p>
 </section>
 <section id="other-resources-and-tools-of-interest">
@@ -723,16 +813,20 @@ A recent approach for dynamic FBA that considers the solution non-uniqueness.</p
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Software and resources</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-gap-flling-validation">Reconstruction, gap-flling, validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draft-reconstructions">Draft reconstructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-fillers">Gap-fillers</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-constraints">Further constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics">Thermodynamics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enzymes">Enzymes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#databases">Databases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporter-annotations">Transporter annotations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-approaches">Topological approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-approaches">Dynamic approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-modelling">Community modelling</a></li>

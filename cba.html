@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How to" href="howto.html" />
-    <link rel="prev" title="Metabolic models" href="background.html" />
+    <link rel="prev" title="Metabolic models" href="metmodels.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,7 +182,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="background.html">Metabolic models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metmodels.html">Metabolic models</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Constraint Based Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto.html">How to</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Software and resources</a></li>
@@ -433,6 +433,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-metabolism-is-caused-by-two-growthlimiting-constraints">Overflow metabolism is caused by two growth‑limiting constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamically-infeasible-loops">Thermodynamically infeasible loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unbiased-methods">Unbiased methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-pathways">Minimal pathways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
 </ul>
             </nav>
         </div>
@@ -457,6 +463,40 @@ document.write(`
 <p>Overflow metabolism in Escherichia coli results from efficient proteome allocation.</p>
 <p>The authors assume that the yield of energy per carbon molecule is higher for respiration than for fermentation: <span class="math notranslate nohighlight">\(n{_r} &gt; n{_f}\)</span>,
 but that fermentation is more proteome-efficient: <span class="math notranslate nohighlight">\(\epsilon{_f} &gt; \epsilon{_r}\)</span>.</p>
+</section>
+<section id="thermodynamically-infeasible-loops">
+<h2>Thermodynamically infeasible loops<a class="headerlink" href="#thermodynamically-infeasible-loops" title="Link to this heading">#</a></h2>
+<p>Quote from <span id="id1">[<a class="reference internal" href="bibliography.html#id8" title="Mohammad Mazharul Islam, Samodha C Fernando, and Rajib Saha. Metabolic modeling elucidates the transactions in the rumen microbiome and the shifts upon virome interactions. Frontiers in microbiology, 10:2412, 2019.">6</a>]</span></p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Quote</strong>!</p>
+<p>One of the limitations of constraint-based genome-scale models is that the mass balance constraints only describe the net accumulation or consumption of metabolites, without restricting the individual reaction fluxes […] there can be <strong>cycles which do not consume or produce any metabolite</strong>. Therefore, the overall thermodynamic driving force of these cycles are zero, implying that no net flux can flow around this cycle <span id="id2">[<a class="reference internal" href="bibliography.html#id9" title="Jan Schellenberger, Nathan E Lewis, and Bernhard Ø Palsson. Elimination of thermodynamically infeasible loops in steady-state metabolic models. Biophysical journal, 100(3):544–553, 2011.">7</a>]</span>.</p>
+</div>
+<p>The authors had a 4-side approach to identify such cycles: they <strong>turned off all the nutrient uptakes</strong> to the cell and used FVA which maximizes and minimizes each of the reaction fluxes subject to mass balance constraints.
+Fluxes reaching either the lower bound or upper bound were defined as <strong>unbounded reactions</strong> and were grouped together as a <strong>linear combination of the null basis</strong> (lumped) of their stoichiometric matrix.
+To eliminate the cycles, they:</p>
+<ul>
+<li><p><strong>removed duplicate reactions:</strong> same reaction occurs both as reversible and irreversible
+<a class="reference internal" href="_images/loops_duplicate_reaction.png"><img alt="doubles" src="_images/loops_duplicate_reaction.png" style="width: 300px; height: 150px;" /></a></p></li>
+<li><p><strong>turned off lumped reaction</strong>: a model may include all steps of a process but also a lumped reaction of it:
+<a class="reference internal" href="_images/loops_lumped.png"><img alt="lumped" src="_images/loops_lumped.png" style="width: 300px; height: 150px;" /></a></p></li>
+<li><p><strong>selectively turned reactions on/off based on available cofactor specificity information</strong>: the same biochemical conversion is carried out by different cofactors in the model, while in reality strain would use only one cofactor:</p>
+<p><a class="reference internal" href="_images/loops_cofactor.png"><img alt="cofactors" src="_images/loops_cofactor.png" style="width: 350px; height: 150px;" /></a></p>
+</li>
+</ul>
+<p>Applying random flux sampling to boundary reactions, we obtained probability distributions over metabolite exchange fluxes.</p>
+<p>These probability distributions give an overview of the growth-supporting flux space, but they cannot be directly decomposed to the elementary metabolite conversions provided by pathways.</p>
+<p>The issue here is that even in the smallest model, e_coli_core, none of the samples returned included <strong>CO2 uptake</strong>, which was feasible in the model and part of several pathways.</p>
+<p>By sampling fluxes separately for each MP, we may find further uptake fluxes and that sampling could complement pathway analysis by allowing detailed analysis of individual pathways’ flux spaces.</p>
+</section>
+<section id="unbiased-methods">
+<h2>Unbiased methods<a class="headerlink" href="#unbiased-methods" title="Link to this heading">#</a></h2>
+<section id="minimal-pathways">
+<h3>Minimal pathways<a class="headerlink" href="#minimal-pathways" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h2>
+<p>homogeneous constraint -&gt; right-han-side is zero</p>
 </section>
 </section>
 
@@ -491,7 +531,7 @@ but that fermentation is more proteome-efficient: <span class="math notranslate 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="background.html"
+       href="metmodels.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -525,6 +565,12 @@ but that fermentation is more proteome-efficient: <span class="math notranslate 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-metabolism-is-caused-by-two-growthlimiting-constraints">Overflow metabolism is caused by two growth‑limiting constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamically-infeasible-loops">Thermodynamically infeasible loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unbiased-methods">Unbiased methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-pathways">Minimal pathways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
 </ul>
   </nav></div>
 
