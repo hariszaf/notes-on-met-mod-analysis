@@ -168,4 +168,10 @@ This text is **standard** _Markdown_
 ::::
 ```
 
+:::{admonition} **Quote**!
+:class: tip
+
+My quote
+:::
+
 
