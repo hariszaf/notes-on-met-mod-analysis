@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -466,10 +466,10 @@ but that fermentation is more proteome-efficient: <span class="math notranslate 
 </section>
 <section id="thermodynamically-infeasible-loops">
 <h2>Thermodynamically infeasible loops<a class="headerlink" href="#thermodynamically-infeasible-loops" title="Link to this heading">#</a></h2>
-<p>Quote from <span id="id1">[<a class="reference internal" href="bibliography.html#id8" title="Mohammad Mazharul Islam, Samodha C Fernando, and Rajib Saha. Metabolic modeling elucidates the transactions in the rumen microbiome and the shifts upon virome interactions. Frontiers in microbiology, 10:2412, 2019.">6</a>]</span></p>
+<p>Quote from <span id="id1">[<a class="reference internal" href="bibliography.html#id10" title="Mohammad Mazharul Islam, Samodha C Fernando, and Rajib Saha. Metabolic modeling elucidates the transactions in the rumen microbiome and the shifts upon virome interactions. Frontiers in microbiology, 10:2412, 2019.">8</a>]</span></p>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Quote</strong>!</p>
-<p>One of the limitations of constraint-based genome-scale models is that the mass balance constraints only describe the net accumulation or consumption of metabolites, without restricting the individual reaction fluxes […] there can be <strong>cycles which do not consume or produce any metabolite</strong>. Therefore, the overall thermodynamic driving force of these cycles are zero, implying that no net flux can flow around this cycle <span id="id2">[<a class="reference internal" href="bibliography.html#id9" title="Jan Schellenberger, Nathan E Lewis, and Bernhard Ø Palsson. Elimination of thermodynamically infeasible loops in steady-state metabolic models. Biophysical journal, 100(3):544–553, 2011.">7</a>]</span>.</p>
+<p>One of the limitations of constraint-based genome-scale models is that the mass balance constraints only describe the net accumulation or consumption of metabolites, without restricting the individual reaction fluxes […] there can be <strong>cycles which do not consume or produce any metabolite</strong>. Therefore, the overall thermodynamic driving force of these cycles are zero, implying that no net flux can flow around this cycle <span id="id2">[<a class="reference internal" href="bibliography.html#id11" title="Jan Schellenberger, Nathan E Lewis, and Bernhard Ø Palsson. Elimination of thermodynamically infeasible loops in steady-state metabolic models. Biophysical journal, 100(3):544–553, 2011.">9</a>]</span>.</p>
 </div>
 <p>The authors had a 4-side approach to identify such cycles: they <strong>turned off all the nutrient uptakes</strong> to the cell and used FVA which maximizes and minimizes each of the reaction fluxes subject to mass balance constraints.
 Fluxes reaching either the lower bound or upper bound were defined as <strong>unbounded reactions</strong> and were grouped together as a <strong>linear combination of the null basis</strong> (lumped) of their stoichiometric matrix.

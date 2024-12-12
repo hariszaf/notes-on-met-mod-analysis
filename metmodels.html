@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -432,13 +432,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-scale-models">Genome-scale models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-strain-level">Background: strain level</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-community-level">Background: community level</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
@@ -457,20 +459,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="metabolic-models">
 <h1>Metabolic models<a class="headerlink" href="#metabolic-models" title="Link to this heading">#</a></h1>
-<section id="genome-scale-models">
-<h2>Genome-scale models<a class="headerlink" href="#genome-scale-models" title="Link to this heading">#</a></h2>
-<section id="background">
-<h3>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h3>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="flux">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (flux)</p>
 <section class="definition-content" id="proof-content">
-<p>(from <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Gregory Stephanopoulos. Metabolic fluxes and metabolic engineering. Metabolic engineering, 1(1):1–11, 1999.">2</a>]</span>)
+<p>(from <span id="id1">[<a class="reference internal" href="bibliography.html#id6" title="Gregory Stephanopoulos. Metabolic fluxes and metabolic engineering. Metabolic engineering, 1(1):1–11, 1999.">2</a>]</span>)
 The metabolic flux can be defined as the rate at which material is processed through a metabolic pathway.
 A reaction’s flux refers to the <strong>rate</strong> at which the biochemical reaction proceeds in a biological system.
 It’s a measure of <em>how quickly</em> reactants are being converted into products within a specific cellular context.</p>
 <p>For insightful visualization that may help you with the concept of a flux, you may have a look <a class="reference external" href="https://biochem.web.utah.edu/iwasa/metabolism/chapter2.html">here</a>.</p>
 </section>
-</div><p>In a simplified picture of balanced growth, all metabolic processes are balanced:
+</div></section>
+<section id="genome-scale-models">
+<h2>Genome-scale models<a class="headerlink" href="#genome-scale-models" title="Link to this heading">#</a></h2>
+<section id="background-strain-level">
+<h3>Background: strain level<a class="headerlink" href="#background-strain-level" title="Link to this heading">#</a></h3>
+<p>In a simplified picture of balanced growth, all metabolic processes are balanced:
 the rate at which material flows into the cell matches the rate at which it is converted, which again matches the production rate of macromolecule precursors.
 In addition, we assume that these fluxes are constant, such that the whole metabolic network is in a ‘steady-state’.
 Taken together, we thus assume that the metabolic network can take up and produce external metabolites (e.g. extracellular metabolites and macromolecular precursors),
@@ -481,7 +486,7 @@ This constraint implies compromises between different reaction fluxes: one flux 
 <div class="proof definition admonition" id="Balanced growth">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span> (Balanced growth)</p>
 <section class="definition-content" id="proof-content">
-<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate $<span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>$,
+<p><strong>Balanced growth</strong> is the average state of a cell in a cell bacterial population growing exponentially at the specific (constant) growth rate <span class="math notranslate nohighlight">\( \mu ≥ 0 \)</span>,
 i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 </section>
 </div><p>The mathematical model:</p>
@@ -493,8 +498,8 @@ i.e. the amount of produced biomass per biomass per cell per unit of time.</p>
 used to generate energy <strong>or</strong> biomass; if one function increases, the other one goes down.</p>
 <p>To obtain realistic predictions, we may introduce additional constraints, for example known flux directions or experimentally measured uptake rates.</p>
 <p>All this information will not suffice to predict metabolic fluxes precisely, but it allows us to narrow down the possible flux distributions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-722946b9-09d7-4368-b83e-d638795d24db">
-<span class="eqno">(1)<a class="headerlink" href="#equation-722946b9-09d7-4368-b83e-d638795d24db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c646ab08-ea6c-4978-9451-197d5e55672b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c646ab08-ea6c-4978-9451-197d5e55672b" title="Permalink to this equation">#</a></span>\[\begin{align}
 N \times  v = 0 = N \times v^+  - N \times v^- = 
 \left[ N \ {-N} \right] 
 \begin{bmatrix}
@@ -503,8 +508,8 @@ N \times  v = 0 = N \times v^+  - N \times v^- =
 \end{bmatrix} \qquad
 \end{align}\]</div>
 <p>The mass-balance constraints in the previous equation, combined with the property that <span class="math notranslate nohighlight">\(v_i^+\)</span> , <span class="math notranslate nohighlight">\(v_i^- ≥ 0\)</span> can be expressed in the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3093d33b-43e2-4604-9c92-99de3c1a08a7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3093d33b-43e2-4604-9c92-99de3c1a08a7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ccd4e6e-c944-47f2-8d8a-11f249d6db0e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-9ccd4e6e-c944-47f2-8d8a-11f249d6db0e" title="Permalink to this equation">#</a></span>\[\begin{align}
 A
 \begin{bmatrix}
     v^+  \\
@@ -526,9 +531,34 @@ I   &amp;   0  \\
 (extreme point) of the cone.</p>
 <p>The space of solutions that satisfies  is called the <strong>flux cone</strong>.</p>
 </section>
-<section id="metabolic-models-with-cobrapy">
-<h3>Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code><a class="headerlink" href="#metabolic-models-with-cobrapy" title="Link to this heading">#</a></h3>
+<section id="background-community-level">
+<h3>Background: community level<a class="headerlink" href="#background-community-level" title="Link to this heading">#</a></h3>
+<p>Constraint-based modeling of microbial communities is more complicated compared to single organisms
+and this is because of the <strong>interdependencies</strong> <em>between</em> the <strong>metabolic objectives of microorganisms</strong> in the community.
+This is reflecting the fact that the metabolic performance (fitness) of each organism is dependent on all others, either directly or indirectly.</p>
+<p>the community metabolic state in a constraint-based stoichiometric model of the microbial community would have to emerge from the multi-objective optimization of each of those performances, taking into account trade-offs and possibly allowing for suboptimal strategies</p>
+<p>Hence, a nonlinear multi-objective optimization perspective appears most appropriate</p>
+<p>However, the commonly used <strong>community FBA (cFBA)</strong> does <strong>not</strong> consider the above and makes use of a much simpler framework, considering the microbial community under study being in a <strong>balanced growth</strong>.</p>
+<div class="proof definition admonition" id="Balanced growth community">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Balanced growth at the community level)</p>
+<section class="definition-content" id="proof-content">
+<p>Moving from the strain to the community level, balanced growth definition <strong>extends</strong>.
+In this case, <strong>all</strong> metabolites (intra- and extracellular) to attain a steady state level <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Ruchir A Khandelwal, Brett G Olivier, Wilfred FM Röling, Bas Teusink, and Frank J Bruggeman. Community flux balance analysis for microbial consortia at balanced growth. PloS one, 8(5):e64567, 2013.">3</a>]</span>.
+This means that **species grow exponentially, but <strong>their total biomass and proportions</strong> remain <strong>constant</strong>.</p>
 </section>
+</div><p>However, such a case should not be considered as a given for what really goes on in real-world communities, since
+by definition, the community balanced growth requires dependencies between species.</p>
+<p>Yet, these dependencies are <strong>dynamic</strong> and can also be <strong>negative</strong>; cFBA suffers in both these cases.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Balanced growth at the community level is not the only option</p>
+<p>A multi-level and multi-objective optimization formulation to properly describe trade-offs between individual vs. community level fitness criteria.
+<code class="docutils literal notranslate"><span class="pre">OptCom</span></code> interrelate the objectives of individual organisms <span id="id3">[<a class="reference internal" href="bibliography.html#id2" title="Ali R Zomorrodi and Costas D Maranas. Optcom: a multi-level optimization framework for the metabolic modeling and analysis of microbial communities. PLoS computational biology, 8(2):e1002363, 2012.">4</a>]</span>.</p>
+</div>
+</section>
+</section>
+<section id="metabolic-models-with-cobrapy">
+<h2>Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code><a class="headerlink" href="#metabolic-models-with-cobrapy" title="Link to this heading">#</a></h2>
 <section id="boundary-reactions">
 <h3>Boundary reactions<a class="headerlink" href="#boundary-reactions" title="Link to this heading">#</a></h3>
 <p>As described in the <a class="reference external" href="https://cobrapy.readthedocs.io/en/latest/building_model.html"><code class="docutils literal notranslate"><span class="pre">cobrapy</span></code> ReadTheDocs</a>, boundary reactions are
@@ -539,13 +569,13 @@ I   &amp;   0  \\
 <li><p>A <strong>sink</strong> is similar to an exchange, but specifically for <em>intracellular metabolites</em>, i.e., a reversible reaction that adds or removes an intracellular metabolite.</p></li>
 </ul>
 <p>An interesting <a class="reference external" href="https://github.com/opencobra/cobrapy/issues/727">issue</a> on the topic.</p>
+</section>
 <section id="groups">
-<h4>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h4>
+<h3>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h3>
 <p>By <code class="docutils literal notranslate"><span class="pre">group.kind</span></code> one may get the kind of group.</p>
 <p>Members of a <em>classification</em> group should have an <em>is-a</em> relationship to the group (e.g. member is-a polar compound, or member is-a transporter).</p>
 <p>Members of a <em>partonomy</em> group should have a <em>part-of</em> relationship (e.g. member is part-of glycolysis).</p>
 <p>Members of a <em>collection</em> group do not have an implied relationship between the members, so use this value for kind when in doubt (e.g. member is a gap-filled reaction, or member is involved in a disease phenotype).</p>
-</section>
 </section>
 </section>
 <section id="kinetic-models">
@@ -555,7 +585,7 @@ I   &amp;   0  \\
 :label: k_cat
 
 ``` --><div class="proof definition admonition" id="kinetic variables">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span> (kinetic variables)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (kinetic variables)</p>
 <section class="definition-content" id="proof-content">
 <p>kinetic parameters:</p>
 <ul class="simple">
@@ -591,11 +621,11 @@ In simpler terms, it reflects how fast an enzyme can convert substrate into prod
 </tr>
 </tbody>
 </table>
-<p>The <strong>stoichiometric matrix</strong> (<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>.</p>
+<p>The <strong>stoichiometric matrix</strong> (<span class="math notranslate nohighlight">\(S\)</span>) represents the reaction topology of a network. For an overview on its characteristics see <span id="id4">[<a class="reference internal" href="bibliography.html#id5" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">5</a>]</span>.</p>
 <div class="proof definition admonition" id="gradient matrix">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span> (gradient matrix)</p>
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (gradient matrix)</p>
 <section class="definition-content" id="proof-content">
-<p>(from <span id="id3">[<a class="reference internal" href="bibliography.html#id3" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">3</a>]</span>)
+<p>(from <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Bernhard Ø Palsson. Systems biology: properties of reconstructed networks. Cambridge university press, 2006.">5</a>]</span>)
 Each link in a reaction map has kinetic properties with which it is associated.
 The reaction rates that describe the kinetic properties are found in the rate laws, <span class="math notranslate nohighlight">\(v(x; k)\)</span>, where the vector <span class="math notranslate nohighlight">\(k\)</span> contains all the kinetic constants that appear in the rate laws.
 Ultimately, these properties represent time constants that tell us how quickly a link in a network will respond to the concentrations that are involved in that link.</p>
@@ -616,7 +646,7 @@ The entries of <span class="math notranslate nohighlight">\(G\)</span> are real 
 The values of <span class="math notranslate nohighlight">\(G\)</span> will always come with an error bar associated with the experimental method used to determine them.
 It has though, the same sparsity properties as the matrix <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <div class="proof definition admonition" id="jacobian matrix">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Jacobian matrix)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Jacobian matrix)</p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(S\)</span> gives us network structure and <span class="math notranslate nohighlight">\(G\)</span> gives us kinetic parameters of the links in the network.
 Their product, the <strong>Jacobian matrix</strong> (<span class="math notranslate nohighlight">\(J\)</span>)  gives us the network dynamics.</p>
@@ -627,11 +657,11 @@ Their product, the <strong>Jacobian matrix</strong> (<span class="math notransla
 <p>Fluxes are measured in moles per unit of time per cell.</p>
 </section>
 </div><div class="proof definition admonition" id="MASS">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (MASS model)</p>
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (MASS model)</p>
 <section class="definition-content" id="proof-content">
 <p>a metabolic network model that explicitly accounts for the regulatory enzymes, and all their bound states, as components in the network.
 The result is a data-driven process for constructing mass action stoichiometric simulation (MASS) models that are based on mapping top-down omics data onto bottom-up network reconstructions.</p>
-<p>For more about MASS models you may check Palsson’s book on dynamic models <span id="id4">[<a class="reference internal" href="bibliography.html#id6" title="Bernhard Ø Palsson. Systems biology: simulation of dynamic network states. Cambridge University Press, 2011.">4</a>]</span> and one of his papers <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. Biophysical journal, 98(2):175–185, 2010.">5</a>]</span></p>
+<p>For more about MASS models you may check Palsson’s book on dynamic models <span id="id6">[<a class="reference internal" href="bibliography.html#id8" title="Bernhard Ø Palsson. Systems biology: simulation of dynamic network states. Cambridge University Press, 2011.">6</a>]</span> and one of his papers <span id="id7">[<a class="reference internal" href="bibliography.html#id7" title="Neema Jamshidi and Bernhard Ø Palsson. Mass action stoichiometric simulation models: incorporating kinetics and regulation into stoichiometric models. Biophysical journal, 98(2):175–185, 2010.">7</a>]</span></p>
 </section>
 </div></section>
 <section id="enzymatic-constraints">
@@ -715,13 +745,15 @@ A <strong>pseudo-metabolite consisting of equal shares of biomass from each of t
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-scale-models">Genome-scale models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-strain-level">Background: strain level</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-community-level">Background: community level</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metabolic-models-with-cobrapy">Metabolic models with <code class="docutils literal notranslate"><span class="pre">cobrapy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-reactions">Boundary reactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-models">Kinetic models</a></li>
